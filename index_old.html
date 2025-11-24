@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Metadata Values --> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{site.description}} {{page.description}}" />
+
+    <title>The Maximal Intelligence Company</title>
+
+    <link href="/static/css/Montserrat-5829.css" rel="stylesheet"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .row {
+            display: grid;
+            /* grid-auto-flow: row; */
+            grid-template-rows: 1fr;
+
+        }
+
+        .col {
+            display: grid;
+            /* grid-auto-flow: column; */
+            grid-template-columns: 1fr;
+        }
+
+        #outerContainer {
+            display: grid;
+            grid-template-areas: 
+                "head logo"
+                "main bar";
+            grid-template-rows: 4rem 1fr;
+            grid-template-columns: 1fr 20rem;
+            overflow:hidden;
+            height: 100dvh;
+            width: 100vw;
+        }
+
+        #bar {
+            grid-area: bar;
+            background-color:midnightblue;
+        }
+
+        #main {
+            grid-area: main;
+            /* text-align: center; */
+            /* text-justify: center; */
+            /* justify-content: center; */
+            overflow: auto;
+        }
+
+        #content {
+            margin-top: 1rem;
+            margin-left: 3rem;
+            margin-right: 3rem;
+            display: grid;
+            grid-gap: 1rem;
+            color:gray;
+        }
+        /**:not(:last-item)*/
+        #content > *:not(:last-child) {
+            padding-bottom: 1rem;
+            border-bottom: solid gray 1px;
+        }
+
+        #head {
+            grid-area: head;
+            align-content: center;
+            /* justify-content:center; */
+            /* text-justify: center; */
+            /* text-align: center; */
+            background-color:aquamarine;
+        }
+
+        #name {
+            margin-left: 3rem
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outerContainer" class="row">
+        <div id="head">
+            <h1 id="name">The Maximal Intelligence Company</h1>
+        </div>
+        <div id="bar" class="col">
+            <div id="topItems"></div>
+            <div id="bottomItems"></div>
+        </div>
+        <div id="main" class="">
+            <div id="content" class="col">
+                <h2>
+                    Efficiently generate large datasets for AI-consumption
+                </h2>
+                <h2>
+                    Achieve the optimal combination of natural and artificial intelligence for maximal results
+                </h2>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
