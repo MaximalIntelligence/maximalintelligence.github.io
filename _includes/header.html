@@ -45,7 +45,14 @@
     </nav>
     
     <div class="header-buttons">
-        <a href="/login" class="btn btn-login">Login</a>
+        <a id="signIn" class="btn btn-login">Login</a>
         <a href="/get-started" class="btn btn-get-started">Get Started</a>
+        <script type="module">
+            import { userManager } from "/static/js/authn.js";
+
+            document.getElementById("signIn").addEventListener("click", async () => {
+                await userManager.signinRedirect();
+            });
+        </script>
     </div>
 </header>
