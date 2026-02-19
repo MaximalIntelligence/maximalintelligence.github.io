@@ -5,54 +5,54 @@
             <img src="/static/images/logo-small.svg" alt="Logo">
         </a>
     </div>
-    
+
     <nav>
         <div class="dropdown">
-            <button class="dropdown-toggle">About</button>
-            <div class="dropdown-menu">
+            <a href="/#about"><button class="dropdown-toggle">About</button></a>
+            <!-- <div class="dropdown-menu">
                 <a href="/about/team">Team</a>
                 <a href="/about/mission">Mission</a>
                 <a href="/about/contact">Contact</a>
-            </div>
+            </div> -->
         </div>
-        
+
         <div class="dropdown">
             <button class="dropdown-toggle">Products</button>
             <div class="dropdown-menu">
-                <a href="/products/product1">Product 1</a>
-                <a href="/products/product2">Product 2</a>
-                <a href="/products/product3">Product 3</a>
+                <a href="#miStandards">miStandards</a>
+                <a href="#miSearch">miSearch</a>
+                <a href="#SemFlow">SemFlow</a>
             </div>
         </div>
-        
-        <div class="dropdown">
+
+        <!-- <div class="dropdown">
             <button class="dropdown-toggle">Research</button>
             <div class="dropdown-menu">
                 <a href="/research/publications">Publications</a>
                 <a href="/research/papers">Papers</a>
                 <a href="/research/blog">Blog</a>
             </div>
-        </div>
-        
+        </div> -->
+
         <div class="dropdown">
-            <button class="dropdown-toggle">Documentation</button>
+            <a href="/docs"><button class="dropdown-toggle">Documentation</button></a>
             <div class="dropdown-menu">
-                <a href="/docs/getting-started">Getting Started</a>
-                <a href="/docs/api">API Reference</a>
-                <a href="/docs/guides">Guides</a>
+                <a href="/docs#miStandards">miStandards</a>
+                <a href="/docs#miSearch">miSearch</a>
+                <a href="/docs#SemFlow">SemFlow</a>
             </div>
         </div>
     </nav>
-    
-    <div class="header-buttons">
-        <a id="signIn" class="btn btn-login">Login</a>
-        <a href="/get-started" class="btn btn-get-started">Get Started</a>
-        <script type="module">
-            import { userManager } from "/static/js/authn.js";
 
-            document.getElementById("signIn").addEventListener("click", async () => {
-                await userManager.signinRedirect();
-            });
-        </script>
+    <div class="header-buttons">
+        <a id="signIn" class="btn btn-login" href="https://cloud.maximalintelligence.com">Login</a>
+        <a href="/get-started" class="btn btn-get-started">Get Started</a>
     </div>
+
+    <button class="nav-toggle" aria-label="Toggle navigation"
+            onclick="this.closest('header').classList.toggle('nav-open')">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </button>
 </header>

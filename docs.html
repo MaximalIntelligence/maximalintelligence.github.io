@@ -1,0 +1,90 @@
+---
+layout: main
+title: Docs
+stylesheets:
+- main
+---
+
+<div class="grid-container">
+    {% include header.html %}
+
+    <div class="docs-hero grid-item">
+        <h1>Documentation</h1>
+        <p>Everything you need to get started with Maximal Intelligence products.</p>
+    </div>
+
+    <div class="docs-layout grid-item">
+        <aside class="docs-sidebar">
+            <nav class="docs-nav">
+                <ul>
+                    <li class="docs-nav-heading">Products</li>
+                    <li>
+                        <ul>
+                            <li><a href="#miStandards" class="docs-nav-link">miStandards</a></li>
+                            <li><a href="#miSearch" class="docs-nav-link">miSearch</a></li>
+                            <li><a href="#SemFlow" class="docs-nav-link">SemFlow</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="docs-main">
+            <section id="miStandards" class="doc-section">
+                <div class="doc-content">
+                    <span class="product-badge">miStandards</span>
+                    <h2>Data Standards for Your Organization</h2>
+                    <p class="doc-description">Define and enforce naming conventions across your organization using Python functions. Build standards collaboratively in the cloud and apply them consistently at scale.</p>
+                    <div class="coming-soon-notice">
+                        <span class="coming-soon-badge">Coming Soon</span>
+                        <p>Full documentation is on its way. In the meantime, explore the product overview on the <a href="/#miStandards">homepage</a>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="miSearch" class="doc-section alt-bg">
+                <div class="doc-content">
+                    <span class="product-badge">miSearch</span>
+                    <h2>AI-Powered Knowledge Search</h2>
+                    <p class="doc-description">Search and access all relevant files across your organization using a knowledge graph that supports both structured queries and AI-powered semantic search.</p>
+                    <div class="coming-soon-notice">
+                        <span class="coming-soon-badge">Coming Soon</span>
+                        <p>Full documentation is on its way. In the meantime, explore the product overview on the <a href="/#miSearch">homepage</a>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="SemFlow" class="doc-section">
+                <div class="doc-content">
+                    <span class="product-badge">SemFlow</span>
+                    <h2>Semantic Data Curation Workflow</h2>
+                    <p class="doc-description">The open-source tool that applies miStandards to your folders. Define folders as projects and run SemFlow to build your knowledge graph automatically.</p>
+                    <div class="coming-soon-notice">
+                        <span class="coming-soon-badge">Coming Soon</span>
+                        <p>Documentation is coming here soon. For now, check out SemFlow on <a href="https://github.com/MaximalIntelligence/semflow">GitHub &rarr;</a></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    {% include footer.html %}
+</div>
+
+<script>
+// Highlight active section in docs sidebar
+const sections = document.querySelectorAll('.doc-section[id]');
+const navLinks = document.querySelectorAll('.docs-nav-link');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            const active = document.querySelector(`.docs-nav-link[href="#${entry.target.id}"]`);
+            if (active) active.classList.add('active');
+        }
+    });
+}, { rootMargin: '-10% 0px -60% 0px' });
+
+sections.forEach(s => observer.observe(s));
+</script>
