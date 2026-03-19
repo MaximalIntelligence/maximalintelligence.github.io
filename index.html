@@ -5,146 +5,96 @@ stylesheets:
 - main
 ---
 
-<div class="grid-container">
-    {% include header.html %}
-
+<div id="main">
+    <section id="top"></section>
     <!-- Hero Section -->
-    <section class="grid-item hero">
-        <div>
-            <h1>Maximal</h1>
-            <h2>Natural</h2>
-            <h2>Artificial</h2>
-        </div>
-        <div id="hero_logo">
-            <img src="/static/images/name_maximal-intelligence.svg"/>
-        </div>
-    </section>
+    <section id="rest">
+        <section id="call">
+            <div id="message">
+                <h1>Accelerate data-driven decision making with the maximal intelligence Knowledge Platform.</h1>
 
-    <section id="about" class="grid-item features about-section alt-bg">
-        <div class="features-content">
-            <h1 class="section-headline">Building the Knowledge Foundation for Agentic Institutions</h1>
-            <div class="problem-solution-grid">
-                <div class="problem-solution-item">
-                    <span class="ps-label problem-label">The Problem</span>
-                    <p>Companies are using generalist AI for specialized domains and hoping RAG bails them out.</p>
+            </div>
+            <div id="actions">
+                <div class="header-buttons">
+                    <a id="requestAccess" class="btn btn-login" href="mailto:support@maximalintelligence.com">Request Access</a>
+                    <a id="demo" class="btn btn-get-started" href="mailto:support@maximalintelligence.com">Demo</a>
                 </div>
-                <div class="problem-solution-item">
-                    <span class="ps-label question-label">The Insight</span>
-                    <p>Why not use specialized AI? Model training is automated anyways&hellip;</p>
-                </div>
-                <div class="problem-solution-item">
-                    <span class="ps-label solution-label">The Solution</span>
-                    <p>Maximal Intelligence turns a data mess into a knowledge foundation useful for search and training.</p>
+                <div id="newsletter-component" style="max-width: 400px; padding: 20px; background: #eee; font-family: sans-serif; border: 1px solid #ccc; border-radius: 8px;">
+                    <h3 style="margin-top: 0;">Sign Up For Updates</h3>
+                    
+                    <div style="display: flex; gap: 8px;">
+                    <input 
+                        type="email" 
+                        id="email-input" 
+                        placeholder="you@example.com" 
+                        style="flex-grow: 1; padding: 8px; border: 1px solid #aaa; border-radius: 4px;"
+                        required 
+                    />
+                    <button 
+                        id="subscribe-btn" 
+                        style="padding: 8px 16px; background: #000; color: #fff; border: none; border-radius: 4px; cursor: pointer;">
+                        Subscribe
+                    </button>
+                    </div>
+                    
+                    <p id="status-message" style="font-size: 14px; margin-top: 12px; margin-bottom: 0; min-height: 20px;"></p>
                 </div>
             </div>
-            <p class="cta-text">Become the knowledge-based agentic business that thrives in the age of AI with Maximal Intelligence!</p>
-        </div>
-    </section>
-
-    <section id="miStandards" class="grid-item features product-section">
-        <div class="features-content product-content">
-            <span class="product-badge">miStandards</span>
-            <h2>Coordinate Data Management Across Your Organization</h2>
-            <p>miStandards make it possible to coordinate data management across an organization using a shared, enforceable set of conventions.</p>
-            <p>Don't do anything new! Use standards to do the same thing you already do&mdash;naming files&mdash;to build searchable databases.</p>
-            <p>miStandards uses Python functions to standardize naming conventions. Build them collaboratively in the cloud.</p>
-            <a href="/docs#miStandards" class="btn btn-get-started feature-link">Check it out &rarr;</a>
-        </div>
-    </section>
-
-    <section id="miSearch" class="grid-item features product-section alt-bg">
-        <div class="features-content product-content">
-            <span class="product-badge">miSearch</span>
-            <h2>Unlock Institutional Knowledge for AI</h2>
-            <p>miSearch makes the entire database of collected data in your organization searchable&mdash;not just what you remembered to upload.</p>
-            <p>Don't just upload one file to a RAG engine. Search and access all relevant files across your organization.</p>
-            <p>Built on a knowledge graph that supports structured queries and AI-powered semantic search.</p>
-            <a href="/docs#miSearch" class="btn btn-get-started feature-link">Check it out &rarr;</a>
-        </div>
-    </section>
-
-    <section id="SemFlow" class="grid-item features product-section">
-        <div class="features-content product-content">
-            <span class="product-badge">SemFlow</span>
-            <h2>Apply miStandards to Your Folders</h2>
-            <p>The Semantic Data Curation Workflow (SemFlow) is the open-source tool that applies miStandards to your folders automatically.</p>
-            <p>Define folders as projects, then run SemFlow to build your knowledge graph&mdash;no manual data wrangling required.</p>
-            <a href="/docs#SemFlow" class="btn btn-get-started feature-link">Check it out &rarr;</a>
-        </div>
-    </section>
-
-    <div id="newsletter-component" style="max-width: 400px; padding: 20px; font-family: sans-serif; border: 1px solid #ccc; border-radius: 8px;">
-        <h3 style="margin-top: 0;">Join the Newsletter</h3>
         
-        <div style="display: flex; gap: 8px;">
-          <input 
-            type="email" 
-            id="email-input" 
-            placeholder="you@example.com" 
-            style="flex-grow: 1; padding: 8px; border: 1px solid #aaa; border-radius: 4px;"
-            required 
-          />
-          <button 
-            id="subscribe-btn" 
-            style="padding: 8px 16px; background: #000; color: #fff; border: none; border-radius: 4px; cursor: pointer;">
-            Subscribe
-          </button>
-        </div>
+        <script>
+            document.getElementById('subscribe-btn').addEventListener('click', async () => {
+            const emailInput = document.getElementById('email-input');
+            const statusMessage = document.getElementById('status-message');
+            const button = document.getElementById('subscribe-btn');
+            const email = emailInput.value.trim();
         
-        <p id="status-message" style="font-size: 14px; margin-top: 12px; margin-bottom: 0; min-height: 20px;"></p>
-      </div>
-      
-      <script>
-        document.getElementById('subscribe-btn').addEventListener('click', async () => {
-          const emailInput = document.getElementById('email-input');
-          const statusMessage = document.getElementById('status-message');
-          const button = document.getElementById('subscribe-btn');
-          const email = emailInput.value.trim();
-      
-          // 1. Basic frontend validation
-          if (!email || !email.includes('@')) {
-            statusMessage.textContent = 'Please enter a valid email address.';
-            statusMessage.style.color = 'red';
-            return;
-          }
-      
-          // 2. Loading state
-          statusMessage.textContent = 'Subscribing...';
-          statusMessage.style.color = '#666';
-          button.disabled = true;
-      
-          // 3. The API Call to Gunicorn
-          try {
-            const response = await fetch('https://newsletter-liart-gamma.vercel.app/api/subscribe', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({ email: email })
-            });
-      
-            const data = await response.json();
-      
-            // 4. Handle the server response
-            if (response.ok) {
-              statusMessage.textContent = 'Success! You are on the list.';
-              statusMessage.style.color = 'green';
-              emailInput.value = ''; // Clear the input
-            } else {
-              // If the python email_validator throws an error, it shows here
-              statusMessage.textContent = data.error || 'Something went wrong.';
-              statusMessage.style.color = 'red';
+            // 1. Basic frontend validation
+            if (!email || !email.includes('@')) {
+                statusMessage.textContent = 'Please enter a valid email address.';
+                statusMessage.style.color = 'red';
+                return;
             }
-          } catch (error) {
-            console.error('Network Error:', error);
-            statusMessage.textContent = 'Network error. Is the Gunicorn server running?';
-            statusMessage.style.color = 'red';
-          } finally {
-            // Re-enable the button no matter what happens
-            button.disabled = false;
-          }
-        });
-      </script>
+        
+            // 2. Loading state
+            statusMessage.textContent = 'Subscribing...';
+            statusMessage.style.color = '#666';
+            button.disabled = true;
+        
+            // 3. The API Call to Gunicorn
+            try {
+                const response = await fetch('https://newsletter-liart-gamma.vercel.app/api/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email })
+                });
+        
+                const data = await response.json();
+        
+                // 4. Handle the server response
+                if (response.ok) {
+                statusMessage.textContent = 'Success! You are on the list.';
+                statusMessage.style.color = 'green';
+                emailInput.value = ''; // Clear the input
+                } else {
+                // If the python email_validator throws an error, it shows here
+                statusMessage.textContent = data.error || 'Something went wrong.';
+                statusMessage.style.color = 'red';
+                }
+            } catch (error) {
+                console.error('Network Error:', error);
+                statusMessage.textContent = 'Network error. Is the Gunicorn server running?';
+                statusMessage.style.color = 'red';
+            } finally {
+                // Re-enable the button no matter what happens
+                button.disabled = false;
+            }
+            });
+        </script>
+        </section>
+        {% include footer.html %}
+    </section>
 
     <!-- Features Section -->
     <!-- <section class="grid-item features">
@@ -161,6 +111,4 @@ stylesheets:
             <a href="/get-started" class="btn btn-get-started" style="margin-top: 1rem; display: inline-block;">Get Started Now</a>
         </div>
     </section> -->
-
-    {% include footer.html %}
 </div>
