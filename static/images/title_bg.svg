@@ -8,8 +8,8 @@
 
     <!-- Ellipse gradient -->
     <linearGradient id="ellipseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ff8a65"/>
-      <stop offset="100%" stop-color="#df764c"/>
+      <stop offset="0%" stop-color="#657affff"/>
+      <stop offset="100%" stop-color="#4c58dfff"/>
     </linearGradient>
 
     <!-- Clip path -->

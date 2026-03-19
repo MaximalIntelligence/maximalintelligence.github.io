@@ -225,9 +225,9 @@ header.nav-open .hamburger-line:nth-child(3) {
 }
 
 #hero_logo img {
-    height: clamp(160px, 28vw, 400px);
-    width: auto;
-    max-width: 100%;
+    height: auto;
+    width: 100%;
+    /* max-width: 100%; */
 }
 
 /* ─── Features / Product sections ───────────────────────── */
