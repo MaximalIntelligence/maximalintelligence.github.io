@@ -40,7 +40,53 @@ stylesheets:
 
     <script>
         document.getElementById('subscribe-btn').addEventListener('click', async () => {
-            // ... your existing script unchanged ...
+        const emailInput = document.getElementById('email-input');
+        const statusMessage = document.getElementById('status-message');
+        const button = document.getElementById('subscribe-btn');
+        const email = emailInput.value.trim();
+    
+        // 1. Basic frontend validation
+        if (!email || !email.includes('@')) {
+            statusMessage.textContent = 'Please enter a valid email address.';
+            statusMessage.style.color = 'red';
+            return;
+        }
+    
+        // 2. Loading state
+        statusMessage.textContent = 'Subscribing...';
+        statusMessage.style.color = '#666';
+        button.disabled = true;
+    
+        // 3. The API Call to Gunicorn
+        try {
+            const response = await fetch('https://newsletter-liart-gamma.vercel.app/api/subscribe', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: email })
+            });
+    
+            const data = await response.json();
+    
+            // 4. Handle the server response
+            if (response.ok) {
+            statusMessage.textContent = 'Success! You are on the list.';
+            statusMessage.style.color = 'green';
+            emailInput.value = ''; // Clear the input
+            } else {
+            // If the python email_validator throws an error, it shows here
+            statusMessage.textContent = data.error || 'Something went wrong.';
+            statusMessage.style.color = 'red';
+            }
+        } catch (error) {
+            console.error('Network Error:', error);
+            statusMessage.textContent = 'Network error. Is the Gunicorn server running?';
+            statusMessage.style.color = 'red';
+        } finally {
+            // Re-enable the button no matter what happens
+            button.disabled = false;
+        }
         });
     </script>
 
