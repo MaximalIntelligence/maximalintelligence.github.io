@@ -1,9 +1,9 @@
 <svg
     xmlns="http://www.w3.org/2000/svg"
     width="600"
-    height="200"
-    viewBox="0 0 600 200"
-    preserveAspectRatio="xMidYMid meet"
+    height="1600"
+    viewBox="0 0 600 1600"
+    preserveAspectRatio="xMidYMin meet"
     filter="url(#blur)"
   >
 
@@ -90,24 +90,39 @@
         >Maximal</text>
       </clipPath>
 
+      <mask id="mMask">
+        <rect x="0" y="0" width="600" height="1600" fill="white" />
+        <text
+          x="300" y="140"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-size="120"
+          font-weight="1000"
+          text-anchor="middle"
+          fill="black"
+          stroke="black"
+          stroke-width="0"
+          stroke-linejoin="round"
+        >Maximal</text>
+      </mask>
+
     </defs>
 
     <!-- lines1: static base, same rect dimensions and pattern as lines2 -->
     <rect
       id="lines1"
       x="0" y="0"
-      width="600" height="600"
+      width="600" height="1600"
       fill="url(#circTile)"
       opacity="0.9"
     />
 
     <!-- Clip group: the M window is fixed here via clip-path.
          lines2 (the rect inside) is what animates — lines move, M stays. -->
-  <g clip-path="url(#mClip)">
+  <g mask="url(#mMask)">
     <rect
       id="lines2"
       x="-400" y="-300"
-      width="1400" height="800"
+      width="1600" height="1600"
       fill="url(#circTile)"
       opacity="0.9"
     />

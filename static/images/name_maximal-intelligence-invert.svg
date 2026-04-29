@@ -1,9 +1,9 @@
 <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1200"
-    height="200"
-    viewBox="0 0 1200 200"
-    preserveAspectRatio="xMidYMid meet"
+    width="800"
+    height="675"
+    viewBox="0 0 800 675"
+    preserveAspectRatio="xMidYMin meet"
     filter="url(#blur)"
   >
 
@@ -78,9 +78,9 @@
       <!-- M clip path — fixed, never moves -->
       <clipPath id="mClip">
         <text
-          x="600" y="140"
+          x="600" y="120"
           font-family="Georgia, 'Times New Roman', serif"
-          font-size="120"
+          font-size="100"
           font-weight="1000"
           text-anchor="middle"
           fill="white"
@@ -90,24 +90,49 @@
         >Maximal Intelligence</text>
       </clipPath>
 
+      <mask id="mMask">
+        <rect x="0" y="0" width="1200" height="1200" fill="white" />
+        <!-- Black text = punched-out hole -->
+        <text
+          x="400" y="70"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-size="70"
+          font-weight="1000"
+          text-anchor="middle"
+          fill="black"
+          stroke="black"
+          stroke-width="2"
+          stroke-linejoin="round"
+        >Maximal Intelligence</text>
+      </mask>
+
     </defs>
 
     <!-- lines1: static base, same rect dimensions and pattern as lines2 -->
     <rect
       id="lines1"
       x="0" y="0"
-      width="1200" height="600"
+      width="1200" height="700"
       fill="url(#circTile)"
       opacity="0.9"
     />
 
     <!-- Clip group: the M window is fixed here via clip-path.
          lines2 (the rect inside) is what animates — lines move, M stays. -->
-  <g clip-path="url(#mClip)">
+  <!-- <g clip-path="url(#mClip)">
     <rect
       id="lines2"
       x="-400" y="-300"
       width="2400" height="800"
+      fill="url(#circTile)"
+      opacity="0.9"
+    />
+  </g> -->
+  <g mask="url(#mMask)">
+    <rect
+      id="lines2"
+      x="-400" y="-300"
+      width="2400" height="1600"
       fill="url(#circTile)"
       opacity="0.9"
     />
