@@ -63,7 +63,6 @@ a:visited {
     padding: 2rem;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.28);
     width: 100%;
-    min-width: 0;
 }
 
 #message iframe {
