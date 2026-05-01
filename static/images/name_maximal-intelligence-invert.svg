@@ -1,8 +1,8 @@
 <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="800"
-    height="675"
-    viewBox="0 0 800 675"
+    width="80"
+    height="70"
+    viewBox="0 0 80 70"
     preserveAspectRatio="xMidYMin meet"
   >
 
@@ -13,7 +13,7 @@
     }
 
     #lines2 {
-      animation: r2 40s linear infinite;
+      animation: r 20s linear infinite;
       transform-origin: 300px 100px;
     }
 
@@ -28,277 +28,96 @@
     .full-size {
       x: 0;
       y: 0;
-      width: 1200px;
-      height: 800px;
-    }
-
-    .blue {
-      fill: #00f;
+      width: 600px;
+      height: 600px;
     }
 
     @keyframes r {
       0% { transform: rotate(0deg) translate(0px,0px); }
-      5% { transform: rotate(0deg) translate(0px,0px); }
-      15% { transform: rotate(0deg) translate(2px,2px); }
-      20% { transform: rotate(0deg) translate(2px,2px); }
-      50% { transform: rotate(4deg) translate(2px,2px); }
-      55% { transform: rotate(4deg) translate(2px,2px); }
-      85% { transform: rotate(0deg) translate(2px,2px); }
+      33% { transform: rotate(0deg) translate(0.4px,0.8px); }
+      66% { transform: rotate(0deg) translate(0.4px,1.2px); }
+      100% { transform: rotate(0deg) translate(0.8px,1.2px); }
     }
 
     @keyframes r2 {
-      0%   { animation-timing-function: ease;     transform: rotate(0deg)  translate(0px, 0px); }
+      0%   { animation-timing-function: ease; transform: rotate(0deg)  translate(0px, 0px); }
       15%  { animation-timing-function: ease; transform: rotate(0deg)  translate(4px, 4px); }
       45%  { animation-timing-function: ease; transform: rotate(0deg)  translate(20px, 12px); }
-
-      55%  { animation-timing-function: ease; transform: rotate(0deg)  translate(12px, 12px); }
-      65%  { animation-timing-function: ease; transform: rotate(0deg)  translate(0px, 0px); }
-      75%  { animation-timing-function: ease; transform: rotate(0deg)  translate(8px, 0px); }
-      85%  { animation-timing-function: ease; transform: rotate(0deg)  translate(8px, 4px); }
-
-    }
-
-
-    @keyframes moved0 {
-      0% { transform: rotate(0deg) translate(0px,0px); }
-      2% { transform: rotate(0deg) translate(4px,4px); }
-      7% { transform: rotate(25deg) translate(4px,4px);}
-      10% { transform: rotate(25deg) translate(4px,4px);}
-      15% { transform: rotate(22deg) translate(4px,4px);}
-      18% { transform: rotate(22deg) translate(4px,4px);}
-      23% { transform: rotate(18deg) translate(4px,4px);}
-      26% { transform: rotate(18deg) translate(4px,4px);}
-      29% { transform: rotate(14deg) translate(4px,4px);}
-      34% { transform: rotate(14deg) translate(4px,4px);}
-      37% { transform: rotate(10deg) translate(4px,4px);}
-      42% { transform: rotate(10deg) translate(4px,4px);}
-      90% { transform: rotate(0deg) translate(4px,4px); }
-    }
-
-    @keyframes moved {
-      0% { transform: rotate(0deg) translate(0px,0px); }
-      2% { transform: rotate(0deg) translate(4px,4px); }
-      7% { transform: rotate(36deg) translate(4px,4px);}
-      10% { transform: rotate(36deg) translate(4px,4px);}
-      15% { transform: rotate(35deg) translate(4px,4px);}
-      18% { transform: rotate(35deg) translate(4px,4px);}
-      23% { transform: rotate(34deg) translate(4px,4px);}
-      26% { transform: rotate(34deg) translate(4px,4px);}
-      90% { transform: rotate(0deg) translate(4px,4px); }
-    }
-
-    @keyframes move {
-      0% { transform: rotate(0deg) translate(0px,0px); }
-      4% { transform: rotate(0deg) translate(4px,4px); }
-      10% { transform: rotate(20deg) translate(4px,4px); }
-      40% { transform: rotate(20deg) translate(104px,24px);}
-      64% { transform: rotate(0deg) translate(24px,24px);}
-      88% { transform: rotate(0deg) translate(0px,0px);}
-    }
-
-    @keyframes move1 {
-      0% { transform: rotate(0deg) translate(0px,0px); }
-      20% { transform: rotate(0deg) translate(4px,4px); }
-      40% { transform: rotate(0deg) translate(6px,6px); }
-      60% { transform: rotate(4deg) translate(6px,6px);}
-      80% { transform: rotate(0deg) translate(6px,6px);}
-      100% { transform: rotate(0deg) translate(0px,0px); }
-    }
-
-    @keyframes move5 {
-      0% { transform: rotate(0deg) translate(0px,0px); }
-      20% { transform: rotate(0deg) translate(4px,4px); }
-      40% { transform: rotate(0deg) translate(6px,6px); }
-      60% { transform: rotate(45deg) translate(6px,6px);}
-      80% { transform: rotate(0deg) translate(6px,6px);}
-      100% { transform: rotate(0deg) translate(0px,0px); }
-    }
-
-    @keyframes morphLines {
-      0%   { transform: rotate(-5deg)   translate(0px,   0px);   }
-      5%   { transform: rotate(-5deg)   translate(0px,   0px);   }
-      50%  { transform: rotate(5deg)  translate(0px,   0px);     }
-      95%   { transform: rotate(-5deg)   translate(0px,   0px); }
-      100%   { transform: rotate(-5deg)   translate(0px,   0px); }
-    }
-
-    @keyframes morphCirclesSpin {
-      0%   { transform: rotate(10deg)   translate(0px,   0px);   }
-      5%   { transform: rotate(10deg)   translate(0px,   0px);   }
-      50%  { transform: rotate(35deg)  translate(0px,   0px);     }
-      95%   { transform: rotate(60deg)   translate(0px,   0px); }
-      100%   { transform: rotate(60deg)   translate(0px,   0px); }
-    }
-
-    @keyframes morphCircles {
-      0%   { transform: rotate(4deg)   translate(0px,   0px);   }
-      27%   { transform: rotate(2deg)   translate(20px,   40px); }
-      50%   { transform: rotate(0.5deg)   translate(40px,   80px); }
-      73%   { transform: rotate(2deg)   translate(60px,   120px); }
-      100%   { transform: rotate(4deg)   translate(80px,   160px); }
+      85%  { animation-timing-function: ease; transform: rotate(0deg)  translate(8px, 8px); }
     }
   </style>
 
-    <defs>
+  <defs>
+    <radialGradient id="dotFade" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%"   class="dot-stop" stop-opacity="0.95"/>
+      <stop offset="25%"  class="dot-stop" stop-opacity="0.95"/>
+      <stop offset="50%"  class="dot-stop" stop-opacity="0.8"/>
+      <stop offset="75%"  class="dot-stop" stop-opacity="0.6"/>
+      <stop offset="100%" class="dot-stop" stop-opacity="0"/>
+    </radialGradient>
 
-      <radialGradient id="ligtDotFade" cx="0.5" cy="0.5" r="0.5">
-        <stop offset="0%"   stop-color="#223" stop-opacity="0.95"/>
-        <stop offset="25%"  stop-color="#223" stop-opacity="0.95"/>
-        <stop offset="50%"  stop-color="#223" stop-opacity="0.8"/>
-        <stop offset="75%"  stop-color="#223" stop-opacity="0.6"/>
-        <stop offset="100%" stop-color="#223" stop-opacity="0"/>
-      </radialGradient>
-
-      <radialGradient id="dotFade" cx="0.5" cy="0.5" r="0.5">
-        <stop offset="0%"   class="dot-stop" stop-opacity="0.95"/>
-        <stop offset="25%"  class="dot-stop" stop-opacity="0.95"/>
-        <stop offset="50%"  class="dot-stop" stop-opacity="0.8"/>
-        <stop offset="75%"  class="dot-stop" stop-opacity="0.6"/>
-        <stop offset="100%" class="dot-stop" stop-opacity="0"/>
-      </radialGradient>
-
-      <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur in="SourceGraphic" stdDeviation="0.6" />
-      </filter>
-
-      <pattern
-        id="lineTile"
-        x="0" y="0"
-        width="5000" height="4"
-        patternUnits="userSpaceOnUse"
-      >
-        <line
-          x1="-500"   y1="2"
-          x2="2000" y2="2"
-          stroke="#e8e0d0"
-          stroke-width="2"
-          stroke-linecap="square"
-        />
-      </pattern>
-
-      <pattern
-        id="circTile"
-        x="0" y="0"
-        width="4" height="4"
-        patternUnits="userSpaceOnUse"
-      >
-        <circle
-          cx="0" cy="2" r="2"
-          fill="url(#dotFade)"
-        />
-        <circle
-          cx="4" cy="2" r="2"
-          fill="url(#dotFade)"
-        />
-      </pattern>
-
-      <pattern
-        id="circTile2"
-        x="2" y="2"
-        width="4" height="4"
-        patternUnits="userSpaceOnUse"
-      >
-        <circle
-          cx="0" cy="2" r="2"
-          fill="url(#dotFade)"
-        />
-        <circle
-          cx="4" cy="2" r="2"
-          fill="url(#dotFade)"
-        />
-      </pattern>
-
-      <pattern
-        id="lightCircTile"
-        x="0" y="0"
-        width="4" height="4"
-        patternUnits="userSpaceOnUse"
-      >
-        <circle
-          cx="0" cy="1" r="0.6"
-          fill="#aab"
-        />
-        <circle
-          cx="4" cy="1" r="0.6"
-          fill="#aab"
-        />
-      </pattern>
-
-      <pattern
-        id="lightCircTile2"
-        x="2" y="2"
-        width="4" height="4"
-        patternUnits="userSpaceOnUse"
-      >
-        <circle
-          cx="0" cy="1" r="0.6"
-          fill="#aab"
-        />
-        <circle
-          cx="4" cy="1" r="0.6"
-          fill="#aab"
-        />
-      </pattern>
-
-      <!-- M clip path — fixed, never moves -->
-      <clipPath id="mClip">
-        <text
-          x="600" y="120"
-          font-family="Georgia, 'Times New Roman', serif"
-          font-size="100"
-          font-weight="1000"
-          text-anchor="middle"
-          fill="white"
-          stroke="white"
-          stroke-width="15"
-          stroke-linejoin="round"
-        >Maximal Intelligence</text>
-      </clipPath>
-
-      <mask id="mMask">
-        <rect x="0" y="0" width="1200" height="1200" fill="white" />
-        <!-- Black text = punched-out hole -->
-        <text
-          x="400" y="70"
-          font-family="Georgia, 'Times New Roman', serif"
-          font-size="70"
-          font-weight="1000"
-          text-anchor="middle"
-          fill="black"
-          stroke="black"
-          stroke-width="2"
-          stroke-linejoin="round"
-        >Maximal Intelligence</text>
-      </mask>
-
-    </defs>
-
-    <!-- lines1: static base, same rect dimensions and pattern as lines2 -->
-
-    <rect id="bg" class="full-size"/>
-    <rect
-      id="lines1"
+    <pattern
+      id="circTile"
       x="0" y="0"
-      width="1200" height="700"
-      fill="url(#circTile)"
-    />
+      width="0.4" height="0.4"
+      patternUnits="userSpaceOnUse"
+    >
+      <circle
+        cx="0" cy="0.2" r="0.2"
+        fill="url(#dotFade)"
+      />
+      <circle
+        cx="0.4" cy="0.2" r="0.2"
+        fill="url(#dotFade)"
+      />
+    </pattern>
 
-    <!-- Clip group: the M window is fixed here via clip-path.
-         lines2 (the rect inside) is what animates — lines move, M stays. -->
-  <!-- <g clip-path="url(#mClip)">
-    <rect
-      id="lines2"
-      x="-400" y="-300"
-      width="2400" height="800"
-      fill="url(#circTile)"
-      opacity="0.9"
-    />
-  </g> -->
+    <pattern
+      id="circTile2"
+      x="0.2" y="0.2"
+      width="0.4" height="0.4"
+      patternUnits="userSpaceOnUse"
+    >
+      <circle
+        cx="0" cy="0.2" r="0.2"
+        fill="url(#dotFade)"
+      />
+      <circle
+        cx="0.4" cy="0.2" r="0.2"
+        fill="url(#dotFade)"
+      />
+    </pattern>
+
+    <mask id="mMask">
+      <rect x="0" y="0" width="120" height="120" fill="white" />
+      <text
+        x="40" y="7"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="7"
+        font-weight="1000"
+        text-anchor="middle"
+        fill="black"
+        stroke="black"
+        stroke-width="0.2"
+        stroke-linejoin="round"
+      >Maximal Intelligence</text>
+    </mask>
+
+  </defs>
+
+  <rect id="bg" class="full-size"/>
+  <rect
+    id="lines1"
+    x="0" y="0"
+    width="600" height="600"
+    fill="url(#circTile)"
+  />
+
   <g mask="url(#mMask)">
     <rect
       id="lines2"
-      x="-1200" y="-1200"
-      width="2400" height="2400"
+      x="-120" y="-120"
+      width="240" height="240"
       fill="url(#circTile2)"
     />
   </g>

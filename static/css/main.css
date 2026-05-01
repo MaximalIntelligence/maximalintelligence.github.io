@@ -45,7 +45,7 @@ a:visited {
     grid-template-columns: 2fr 1fr;
     gap: 2rem;
     width: calc(100% - 4rem);
-    max-width: 900px;
+    max-width: 1400px;
     align-items: start;
     margin: 0 2rem;
 }
@@ -76,6 +76,7 @@ a:visited {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    width: 100%;
 }
 
 
@@ -165,6 +166,7 @@ header {
 
 .newsletter-input-row {
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
 }
 
