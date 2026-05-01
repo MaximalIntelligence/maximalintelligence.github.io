@@ -10,11 +10,21 @@
     svg {
       --dot-color: #223;
       --bg-color: #eee;
+      --pattern-scale: 0.9;
+    }
+
+    circle {
+      fill: url(#dotFade);
+      r: 0.17;
+    }
+
+    pattern {
+      transform: scale(var(--pattern-scale));
+      transform-origin: 0 0;
     }
 
     #lines2 {
-      animation: r 20s linear infinite;
-      transform-origin: 300px 100px;
+      animation: r2 14s linear infinite;
     }
 
     #bg {
@@ -32,105 +42,108 @@
       height: 600px;
     }
 
-    @keyframes r {
-      0% { transform: rotate(0deg) translate(0px,0px); }
-      33% { transform: rotate(0deg) translate(0.4px,0.8px); }
-      66% { transform: rotate(0deg) translate(0.4px,1.2px); }
-      100% { transform: rotate(0deg) translate(0.8px,1.2px); }
-    }
-
     @keyframes r2 {
-      0%   { animation-timing-function: ease; transform: rotate(0deg)  translate(0px, 0px); }
-      15%  { animation-timing-function: ease; transform: rotate(0deg)  translate(4px, 4px); }
-      45%  { animation-timing-function: ease; transform: rotate(0deg)  translate(20px, 12px); }
-      85%  { animation-timing-function: ease; transform: rotate(0deg)  translate(8px, 8px); }
+      0%   { transform: translate(calc(0px * var(--pattern-scale)), calc(0px * var(--pattern-scale))); }
+      50%  { transform: translate(calc(0.28px * var(--pattern-scale)), calc(0.28px * var(--pattern-scale))); }
+      100% { transform: translate(calc(0.56px * var(--pattern-scale)), calc(0px * var(--pattern-scale))); }
     }
   </style>
 
   <defs>
     <radialGradient id="dotFade" cx="0.5" cy="0.5" r="0.5">
       <stop offset="0%"   class="dot-stop" stop-opacity="0.95"/>
-      <stop offset="25%"  class="dot-stop" stop-opacity="0.95"/>
-      <stop offset="50%"  class="dot-stop" stop-opacity="0.8"/>
-      <stop offset="75%"  class="dot-stop" stop-opacity="0.6"/>
+      <stop offset="25%"  class="dot-stop" stop-opacity="0.85"/>
+      <stop offset="50%"  class="dot-stop" stop-opacity="0.7"/>
+      <stop offset="75%"  class="dot-stop" stop-opacity="0.4"/>
       <stop offset="100%" class="dot-stop" stop-opacity="0"/>
     </radialGradient>
 
     <pattern
       id="circTile"
       x="0" y="0"
-      width="0.4" height="0.4"
+      width="0.56" height="0.56"
       patternUnits="userSpaceOnUse"
     >
-      <circle
-        cx="0" cy="0.2" r="0.2"
-        fill="url(#dotFade)"
-      />
-      <circle
-        cx="0.4" cy="0.2" r="0.2"
-        fill="url(#dotFade)"
-      />
+      <circle cx="0.28" cy="0" />
+      <circle cx="0" cy="0.28" />
+      <circle cx="0.56" cy="0.28" />
+      <circle cx="0.28" cy="0.56" />
     </pattern>
 
     <pattern
       id="circTile2"
-      x="0.2" y="0.2"
-      width="0.4" height="0.4"
+      x="0.28" y="0"
+      width="0.56" height="0.56"
       patternUnits="userSpaceOnUse"
     >
-      <circle
-        cx="0" cy="0.2" r="0.2"
-        fill="url(#dotFade)"
-      />
-      <circle
-        cx="0.4" cy="0.2" r="0.2"
-        fill="url(#dotFade)"
-      />
+      <circle cx="0.28" cy="0" />
+      <circle cx="0" cy="0.28" />
+      <circle cx="0.56" cy="0.28" />
+      <circle cx="0.28" cy="0.56" />
     </pattern>
 
-    <mask id="mMask">
-      <rect x="0" y="0" width="120" height="120" fill="white" />
+    <mask id="mMask-inv" mask-type="alpha">
       <text
         x="40" y="7"
         font-family="Georgia, 'Times New Roman', serif"
-        font-size="7"
+        font-size="6"
         font-weight="1000"
         text-anchor="middle"
-        fill="black"
-        stroke="black"
+        fill="white"
+        stroke="white"
         stroke-width="0.2"
         stroke-linejoin="round"
       >Maximal</text>
       <text
         x="40" y="14"
         font-family="Georgia, 'Times New Roman', serif"
-        font-size="7"
+        font-size="6"
         font-weight="1000"
         text-anchor="middle"
-        fill="black"
-        stroke="black"
+        fill="white"
+        stroke="white"
         stroke-width="0.2"
         stroke-linejoin="round"
       >Intelligence</text>
     </mask>
 
+    <mask id="mMask-inv-inner" mask-type="alpha">
+      <text
+        x="40" y="7"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="7"
+        font-weight="600"
+        text-anchor="middle"
+        fill="white"
+        stroke="white"
+        stroke-width="0"
+        stroke-linejoin="round"
+      >Maximal Intelligence</text>
+    </mask>
+
   </defs>
 
   <rect id="bg" class="full-size"/>
-  <rect
-    id="lines1"
-    x="0" y="0"
-    width="600" height="600"
-    fill="url(#circTile)"
-  />
+  <g>
+    <rect
+      id="lines1"
+      x="-120" y="-120"
+      width="240" height="240"
+      fill="url(#circTile)"
+    />
+  </g>
 
-  <g mask="url(#mMask)">
+  <g>
     <rect
       id="lines2"
       x="-120" y="-120"
       width="240" height="240"
       fill="url(#circTile2)"
     />
+  </g>
+
+  <g mask="url(#mMask-inv)">
+    <rect x="0" y="0" width="600" height="600" fill="white" opacity="0.9"/>
   </g>
 
   </svg>
