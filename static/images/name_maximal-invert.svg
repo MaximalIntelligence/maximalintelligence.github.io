@@ -10,12 +10,20 @@
     svg {
       --dot-color: #223;
       --bg-color: #eee;
-      --pattern-scale: 0.9;
+      --pattern-scale: 3;
+    }
+
+    text {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 900;
+      text-anchor: middle;
+      stroke-linejoin: round;
     }
 
     circle {
-      fill: url(#dotFade);
-      r: 0.17;
+      <!-- fill: url(#dotFade); -->
+      fill: var(--dot-color);
+      r: 0.14;
     }
 
     pattern {
@@ -23,8 +31,12 @@
       transform-origin: 0 0;
     }
 
+    #lines1 {
+      animation: r1 14s linear infinite;
+    }
+
     #lines2 {
-      animation: r2 14s linear infinite;
+      animation: r2 42s ease infinite;
     }
 
     #bg {
@@ -38,14 +50,20 @@
     .full-size {
       x: 0;
       y: 0;
-      width: 600px;
-      height: 600px;
+      width: 240px;
+      height: 240px;
+    }
+
+    @keyframes r1 {
+      0%   { transform: rotate(45deg); }
+      50%  { transform: rotate(45deg); }
+      100% { transform: rotate(45deg); }
     }
 
     @keyframes r2 {
-      0%   { transform: translate(calc(0px * var(--pattern-scale)), calc(0px * var(--pattern-scale))); }
-      50%  { transform: translate(calc(0.28px * var(--pattern-scale)), calc(0.28px * var(--pattern-scale))); }
-      100% { transform: translate(calc(0.56px * var(--pattern-scale)), calc(0px * var(--pattern-scale))); }
+      0%   { transform: rotate(45deg) translate(calc(0px * var(--pattern-scale)), calc(0px * var(--pattern-scale))); }
+      50%  { transform: rotate(45deg) translate(calc(0.56px * var(--pattern-scale)), calc(0.56px * var(--pattern-scale))); }
+      100% { transform: rotate(45deg) translate(calc(1.12px * var(--pattern-scale)), calc(0px * var(--pattern-scale))); }
     }
   </style>
 
@@ -82,43 +100,25 @@
       <circle cx="0.28" cy="0.56" />
     </pattern>
 
-    <mask id="mMask-inv" mask-type="alpha">
-      <text
-        x="40" y="7"
-        font-family="Georgia, 'Times New Roman', serif"
-        font-size="6"
-        font-weight="1000"
-        text-anchor="middle"
-        fill="white"
-        stroke="white"
-        stroke-width="0.2"
-        stroke-linejoin="round"
-      >Maximal</text>
-      <text
-        x="40" y="14"
-        font-family="Georgia, 'Times New Roman', serif"
-        font-size="6"
-        font-weight="1000"
-        text-anchor="middle"
-        fill="white"
-        stroke="white"
-        stroke-width="0.2"
-        stroke-linejoin="round"
-      >Intelligence</text>
+    <mask id="maximal">
+      <text x="40" y="7" fill="white" stroke="white" font-size="6" stroke-width="0.2">Maximal</text>
+      <text x="40" y="14" fill="white" stroke="white" font-size="6" stroke-width="0.2">Intelligence</text>
     </mask>
 
-    <mask id="mMask-inv-inner" mask-type="alpha">
-      <text
-        x="40" y="7"
-        font-family="Georgia, 'Times New Roman', serif"
-        font-size="7"
-        font-weight="600"
-        text-anchor="middle"
-        fill="white"
-        stroke="white"
-        stroke-width="0"
-        stroke-linejoin="round"
-      >Maximal Intelligence</text>
+    <mask id="maximal-border">
+      <text x="40" y="7" fill="white" stroke="white" font-size="6" stroke-width="0.4">Maximal</text>
+      <text x="40" y="14" fill="white" stroke="white" font-size="6" stroke-width="0.4">Intelligence</text>
+      <text x="40" y="7" fill="black" stroke="black" font-size="6" stroke-width="0.2">Maximal</text>
+      <text x="40" y="14" fill="black" stroke="black" font-size="6" stroke-width="0.2">Intelligence</text>
+    </mask>
+
+    <mask id="maximal-intelligence">
+      <text x="40" y="7" fill="white" stroke="white" font-size="7" stroke-width="0">Maximal Intelligence</text>
+    </mask>
+
+    <mask id="maximal-intelligence-border">
+      <text x="40" y="7" fill="white" stroke="white" font-size="7" stroke-width="0">Maximal Intelligence</text>
+      <text x="40" y="7" fill="black" stroke="black" font-size="7" stroke-width="0.2">Maximal Intelligence</text>
     </mask>
 
   </defs>
@@ -142,8 +142,12 @@
     />
   </g>
 
-  <g mask="url(#mMask-inv)">
+  <g mask="url(#maximal)">
     <rect x="0" y="0" width="600" height="600" fill="white" opacity="0.9"/>
+  </g>
+
+  <g mask="url(#maximal-border)">
+    <rect class="full-size" fill="var(--dot-color)"/>
   </g>
 
   </svg>
