@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+:root {
+    --color-main: #333;
+    --color-secondary: #777;
+    --background-main: #eee;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: var(--color-main);
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+#header-left img {
+    height: 1.5rem;
+    width: auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-main);
+}
+a:hover {
+    color: var(--color-secondary);
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    height: 25px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+header * {
+    display: flex;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+#header-left {
+    align-items: center;
+    gap: 15px;
+}
+
+#header-right {
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#nav-button {
+    display: none;
+    cursor: pointer;
+}
+
+#nav-menu {
+    gap: 25px;
+}
+
+@media (max-width: 800px) {
+    #nav-button {
+        display: block;
+    }
+
+    #nav-menu {
+        flex-direction: column;
+        z-index: 1000;
+        position: fixed;
+        top: calc(1.5rem + 25px);
+        left: 0px;
+        height: calc(100dvh - 1.5rem - 25px);
+        width: 100dvw;
+        background: var(--background-main);
+        padding: 4rem;
+    }
+
+    .hidden-narrow {
+        display: none;
+    }
+
+    #nav-menu h3 {
+        font-size: 2rem;
+    }
+}
+
+
+#lattice {
+    position: fixed;
+    top: 50dvh;
+    transform: translateY(-50%);
+    right: max(0px, calc((100dvw - 1200px) / 2));
+    height: auto;
+    width: 300px;
+}
+
+#lattice svg {
+    width: 100%;
+    height: auto;
+}
+
+
+#split {
+    display: grid;
+    grid-template-columns: 1fr 325px;
+}
+
+
+@media (max-width: 800px) {
+    #lattice {
+        position: fixed;
+        top: calc(1.5rem + 25px + 25px);
+        left: 50dvw;
+        transform: translateX(-50%);
+        width: 150px;
+        height: auto;
+    }
+
+    #split {
+        grid-template-columns: 1fr;
+        top: calc(1.5rem + 25px + 25px + 150px);
+    }
+}
+
+
+#content {
+    display: grid;
+    grid-auto-flow: row;
+    margin-left: 1rem;
+    gap: 6rem;
+}
+
+.bb {
+    border-bottom-style: solid;
+    border-bottom-color: var(--color-main);
+    border-bottom-width: 1px;
+}
+
+#hook {
+    margin-top: 30dvh;
+}
+
+#hook h1 {
+    font-size: 4rem;
+}
+
+#hook p {
+    font-size: 1.25rem;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+}
