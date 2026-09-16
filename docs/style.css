@@ -119,6 +119,15 @@ h2 {
 
 
 @media (max-width: 800px) {
+    #lattice-container {
+        position: fixed;
+        top: calc(1.5rem + 25px + 25px);
+        left: 0;
+        height: 150px;
+        width: 100dvw;
+        background: white;
+        z-index: 100;
+    }
     #lattice {
         position: fixed;
         top: calc(1.5rem + 25px + 25px);
@@ -126,6 +135,8 @@ h2 {
         transform: translateX(-50%);
         width: 150px;
         height: auto;
+        background: white;
+        z-index: 100;
     }
 
     #split {
@@ -160,4 +171,9 @@ h2 {
     font-size: 1.25rem;
     margin-top: 4rem;
     margin-bottom: 1rem;
+}
+
+
+.bar h2 {
+    margin-top: 1rem;
 }
