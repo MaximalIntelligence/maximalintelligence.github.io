@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///home/sven/MaximalIntelligence/Software/maximalintelligence.com/app/layout.jsx"],"sourcesContent":["import \"./style.css\"\n\nexport const metadata = {\n    title: {\n      default: \"Maximal Intelligence\",\n      template: \"%s · Maximal Intelligence\",\n    },\n    description: \"A description of my site.\",\n  };\n\n\nexport default function RootLayout({ children }) {\n    return (\n      <html lang=\"en\">\n        <body>{children}</body>\n      </html>\n    );\n  }"],"names":["metadata","title","default","template","description","RootLayout","children","lang"],"mappings":";;;;;;;;;AAEO,MAAMA,WAAW;IACpBC,OAAO;QACLC,SAAS;QACTC,UAAU;IACZ;IACAC,aAAa;AACf;AAGa,SAASC,WAAW,EAAEC,QAAQ,EAAE;IAC3C,qBACE,8OAAC;QAAKC,MAAK;kBACT,cAAA,8OAAC;sBAAMD;;;;;;;;;;;AAGb"}},
+    {"offset": {"line": 44, "column": 0}, "map": {"version":3,"sources":["file:///home/sven/MaximalIntelligence/Software/maximalintelligence.com/node_modules/next/src/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = (\n  require('../../module.compiled') as typeof import('../../module.compiled')\n).vendored['react-rsc']!.ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":"AAAAA,OAAOC,OAAO,GACZC,QAAQ,4HACRC,QAAQ,CAAC,YAAY,CAAEC,kBAAkB","ignoreList":[0]}}]
+}

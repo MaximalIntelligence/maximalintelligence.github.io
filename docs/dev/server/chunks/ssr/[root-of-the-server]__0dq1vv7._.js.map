@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 13, "column": 0}, "map": {"version":3,"sources":["file:///home/sven/MaximalIntelligence/Software/maximalintelligence.com/app/icon.svg.mjs%20(structured%20image%20object)"],"sourcesContent":["import src from \"IMAGE\";\nexport default { src, width: 608, height: 560 }\n"],"names":["src","width","height"],"mappings":";;;;AAAA;;uCACe;IAAEA,KAAAA,gIAAG;IAAEC,OAAO;IAAKC,QAAQ;AAAI"}},
+    {"offset": {"line": 28, "column": 0}, "map": {"version":3,"sources":["file:///home/sven/MaximalIntelligence/Software/maximalintelligence.com/app/page.jsx"],"sourcesContent":["function Row({ left, right }) {\n    return (\n      <div className=\"row\">\n        <div className=\"center-block\">\n          <div className=\"left-block\">{left}</div>\n          <div className=\"right-block\">{right}</div>\n        </div>\n      </div>\n    );\n}\n  \nexport default function Home() {\n    return (\n      <main>\n        <Row left=\"Hello\" right=\"World\" />\n        <Row left={<h2>Titlewooo</h2>} right={<p>Description</p>} />\n      </main>\n    );\n}"],"names":["Row","left","right","className","Home"],"mappings":";;;;;;AAAA,SAASA,IAAI,EAAEC,IAAI,EAAEC,KAAK,EAAE;IACxB,qBACE,8OAAC;QAAIC,WAAU;kBACb,cAAA,8OAAC;YAAIA,WAAU;;8BACb,8OAAC;oBAAIA,WAAU;8BAAcF;;;;;;8BAC7B,8OAAC;oBAAIE,WAAU;8BAAeD;;;;;;;;;;;;;;;;;AAIxC;AAEe,SAASE;IACpB,qBACE,8OAAC;;0BACC,8OAACJ;gBAAIC,MAAK;gBAAQC,OAAM;;;;;;0BACxB,8OAACF;gBAAIC,oBAAM,8OAAC;8BAAG;;;;;;gBAAgBC,qBAAO,8OAAC;8BAAE;;;;;;;;;;;;;;;;;AAGjD"}}]
+}

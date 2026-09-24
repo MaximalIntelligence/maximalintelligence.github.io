@@ -1,0 +1,126 @@
+/* [project]/app/style.css [app-client] (css) */
+@font-face {
+  font-family: Inter;
+  src: url("/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --color-main: #333;
+  --color-secondary: #777;
+  --background-main: #eee;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--color-main);
+  font-family: Inter, sans-serif;
+}
+
+div, nav {
+  display: flex;
+}
+
+header {
+  max-width: 1200px;
+  margin: 1rem auto;
+  display: flex;
+}
+
+header > * {
+  flex: 600px;
+  display: flex;
+}
+
+#logo {
+  width: auto;
+  height: 3rem;
+}
+
+a {
+  color: var(--color-main);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+#header-left > * {
+  align-self: center;
+  margin: 0 1rem;
+}
+
+#corporation-title {
+  font-size: clamp(1.5rem, 3.5vw, 3rem);
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  #corporation-title {
+    display: none;
+  }
+}
+
+#header-right {
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+#nav-button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+  display: none;
+}
+
+#nav-menu {
+  gap: 25px;
+}
+
+@media (max-width: 800px) {
+  #nav-button {
+    display: block;
+  }
+
+  #nav-menu {
+    z-index: 1000;
+    background: var(--background-main);
+    flex-direction: column;
+    width: 100dvw;
+    height: calc(100dvh - 5rem);
+    padding: 4rem;
+    position: fixed;
+    top: 5rem;
+    left: 0;
+  }
+
+  .hidden-narrow {
+    display: none;
+  }
+
+  #nav-menu h3 {
+    font-size: 2rem;
+  }
+}
+
+/*# sourceMappingURL=app_style_0p9osh9.css.map*/

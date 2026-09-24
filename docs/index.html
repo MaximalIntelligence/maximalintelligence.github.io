@@ -79,6 +79,120 @@ queries or the Maximal Intelligence dataset builder.</p>
 <p>Agentic AI is used to automatically generate insights into your
 organizations data based on prompts.</p>
 </section>
+<div class="bar">
+<form id="newsletter-form">
+  <label>
+    Email
+    <input name="email" type="email" required />
+  </label>
+
+  <button type="submit">Submit</button>
+</form>
+
+<p id="status" role="status"></p>
+
+<script>
+  const form = document.querySelector("#newsletter-form");
+  const status = document.querySelector("#status");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault(); // Prevent page reload
+    status.textContent = "";
+
+    const data = Object.fromEntries(new FormData(form));
+
+    fetch("http://127.0.0.1:8787/landing-page/newsletter", 
+        {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(data)}
+    )
+        .then(r => {
+            if (!r.ok) {
+                throw new Error(`Request failed: ${r.status}`);
+            }
+            status.textContent = `Thanks for signing up! Your email was captured.`;
+            form.reset();
+        })
+        .catch(
+            e => {
+                status.textContent = `There was an error signing up. Please try again later.`;
+            }
+        );
+  });
+</script>
+</div>
+<div class="bar">
+<form id="contact-form">
+  <label>
+    Email
+    <input name="email" type="email" required />
+  </label>
+
+  <label>
+    Name
+    <input
+      type="text"
+      name="name"
+      required
+      minlength="1"
+      maxlength="100"
+      pattern="[^\x00-\x1F\x7F]+"
+      title="Control characters are not allowed"
+      autocomplete="name"
+    >
+  </label>
+
+  <label>
+    Affiliation
+    <input
+      type="text"
+      name="affiliation"
+      maxlength="100"
+      pattern="[^\x00-\x1F\x7F]+"
+      title="Control characters are not allowed"
+      autocomplete="organization"
+    >
+  </label>
+
+  <label>
+    Message
+    <textarea
+      name="message"
+      required
+      minlength="1"
+      maxlength="1000"
+    ></textarea>
+  </label>
+
+  <button type="submit">Submit</button>
+</form>
+
+<p id="status-contact" role="status"></p>
+
+<script>
+  const form_contact = document.querySelector("#contact-form");
+  const status_contact = document.querySelector("#status-contact");
+
+  form_contact.addEventListener("submit", (event) => {
+    event.preventDefault(); // Prevent page reload
+    status_contact.textContent = "";
+
+    const data = Object.fromEntries(new FormData(form_contact));
+
+    fetch("http://127.0.0.1:8787/landing-page/contact", 
+        {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(data)}
+    ).then(r => {
+        if (!r.ok) {
+            throw new Error(`Request failed: ${r.status}`);
+        }
+        status_contact.textContent = `Thanks for reaching out! Someone will follow up as soon as possible.`;
+        form.reset();
+    }).catch(
+        e => {
+            status_contact.textContent = `There was an error. Please try again later or email <a href="mailto:hello@maximalintelligence.com>hello@maximalintelligence.com</a>.`;
+        }
+    );
+  });
+</script>
+</div>
 </div>
 <div id="lattice-container">
 <div id="lattice">
