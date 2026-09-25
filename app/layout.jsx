@@ -1,5 +1,7 @@
 import "./style.css"
 
+import { Logo } from "../components/header";
+
 export const metadata = {
     title: {
       default: "Maximal Intelligence",
@@ -12,7 +14,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
       <html lang="en">
-        <body>{children}</body>
+        <body>
+          {children}
+          <footer>
+            <div id="footer-content">
+              <div id="footer-left">
+                <Logo />
+              </div>
+            </div>
+          </footer>
+        </body>
       </html>
     );
   }

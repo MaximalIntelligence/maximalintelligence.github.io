@@ -1,53 +1,70 @@
 "use client";
 
 import { useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import { Header } from "../components/header";
+import { Lattice } from "../components/lattice";
+import { NewsletterForm, ContactForm } from "../components/forms";
+import CrystalLattice from "../components/CrystalLattice";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL;
 
-function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const closeMenu = () => setMenuOpen(false);
 
-  return (
-    <header>
-      <a id="header-left" href="/">
-        <img id="logo" src="/logo.svg" alt="Maximal Intelligence Logo" />
-        <h2 id="corporation-title">Maximal Intelligence</h2>
-      </a>
-
-      <div id="header-right">
-        <button id="nav-button" type="button" onClick={() => setMenuOpen(open=>!open)}>☰</button>
-        <nav id="nav-menu" className={menuOpen ? "" : "hidden-narrow"}>
-          <a href="#problem" onClick={closeMenu}><h3>Problem</h3></a>
-          <a href="#solution" onClick={closeMenu}><h3>Solution</h3></a>
-          <a href="#platform" onClick={closeMenu}><h3>Platform</h3></a>
-          <a href="#contact" onClick={closeMenu}><h3>Contact</h3></a>
-        </nav>
-      </div>
-    </header>
-  );
-}
-
-
-
-function Row({ left, right }) {
+function Row({ id, children }) {
     return (
-      <div className="row">
-        <div className="center-block">
-          <div className="left-block">{left}</div>
-          <div className="right-block">{right}</div>
+      <div id={id} className="row">
+        <div className="center-content">
+          {children}
         </div>
       </div>
     );
 }
+
+
+function md(strings, ...values) {
+  return <ReactMarkdown>{String.raw(strings, ...values)}</ReactMarkdown>;
+}
+
+const hero_message = md`
+# Data management for domain knowledge
+
+Maximal Intelligence optimally integrates human understanding and AI`;
+
+`
+# Maximal Intelligence is the optimal combination of human understanding and AI.
+
+It is data management for domain knowledge.`;
+
+`
+# Context Management That Merges Human Understanding And AI
+
+A new data management for domain knowledge that unlocks the context needed to understand your data.`;
+
+
+const hero = (<>
+  <div id="hero-left">
+    {hero_message}
+  </div>
+  <div id="hero-right">
+    <CrystalLattice />
+  </div>
+</>);
+
+const interest_content = md`
+## Interested?`;
+
+const interest = (<div>
+  {interest_content} <NewsletterForm />
+</div>);
   
 export default function Home() {
     return (
       <>
-      <Header />
+      <Header sections={["problem", "contact"]}/>
       <main>
-        <Row left="Hello" right="World" />
-        <Row left={<h2>Titlewooo</h2>} right={<p>Description</p>} />
+        <Row id="phone-title"><h1>Maximal Intelligence</h1></Row>
+        <Row id="hero">{hero}</Row>
+        <Row id="interest">{interest}</Row>
       </main>
       </>
     );
