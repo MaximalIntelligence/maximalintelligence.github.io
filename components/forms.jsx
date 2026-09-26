@@ -50,10 +50,17 @@ export function NewsletterForm() {
       endpoint="interest"
       successMessage="Thanks for reaching out!"
     >
-      <input name="email" type="email" autoComplete="email" placeholder="email" required />
+      <input name="email" type="email" autoComplete="email" placeholder="email" title="Email" required />
       <button type="submit">hear from us!</button>
     </SubmissionForm>
   );
+}
+
+
+function F({n, t, r=false, ...atts}) {
+  return (
+    <input name={n} type={t} autoComplete={n} placeholder={n} title={n} required={r} {...atts} />
+  )
 }
 
 export function ContactForm() {
@@ -64,38 +71,12 @@ export function ContactForm() {
       endpoint="contact"
       successMessage="Thanks for reaching out! Someone will follow up as soon as possible."
     >
-      <label>
-        Email
-        <input name="email" type="email" autoComplete="email" required />
-      </label>
-      <label>
-        Name
-        <input
-          type="text"
-          name="name"
-          required
-          minLength={1}
-          maxLength={100}
-          pattern={String.raw`[^\x00-\x1F\x7F]+`}
-          title="Control characters are not allowed"
-          autoComplete="name"
-        />
-      </label>
-      <label>
-        Affiliation
-        <input
-          type="text"
-          name="affiliation"
-          maxLength={100}
-          pattern={String.raw`[^\x00-\x1F\x7F]+`}
-          title="Control characters are not allowed"
-          autoComplete="organization"
-        />
-      </label>
-      <label>
-        Message
-        <textarea name="message" required minLength={1} maxLength={1000} />
-      </label>
+      <F n="name" t="text" minLength={1} maxLength={100} pattern={String.raw`[^\x00-\x1F\x7F]+`}/>
+      <F n="email" t="email" r={true}/>
+      <F n="affiliation" t="text" minLength={1} maxLength={100} pattern={String.raw`[^\x00-\x1F\x7F]+`}/>
+
+      <textarea name="message" required minLength={1} maxLength={1000} />
+      <button type="submit">send</button>
     </SubmissionForm>
   );
 }

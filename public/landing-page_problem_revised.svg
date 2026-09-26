@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="rwc" width="488" height="292" viewBox="16 0 488 292" role="img" aria-labelledby="rwc-title rwc-desc" xmlns:c2pa="http://c2pa.org/manifest">
+  <title id="rwc-title">Real-world context is disconnected from storage</title>
+  <defs>
+    <linearGradient id="rwc-person" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6f95ff"/>
+      <stop offset="1" stop-color="#3659f0"/>
+    </linearGradient>
+    <linearGradient id="rwc-globe" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#34c6f4"/>
+      <stop offset="1" stop-color="#3e6cff"/>
+    </linearGradient>
+    <linearGradient id="rwc-gloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".22"/>
+      <stop offset=".5" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="rwc-stop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff7a7a"/>
+      <stop offset="1" stop-color="#e5384d"/>
+    </linearGradient>
+    <linearGradient id="rwc-flow" x1="104" y1="0" x2="238" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4d7cff"/>
+      <stop offset="1" stop-color="#6f95ff"/>
+    </linearGradient>
+    <clipPath id="rwc-earth"><circle cx="0" cy="0" r="16.2"/></clipPath>
+    <filter id="rwc-lift" x="-40%" y="-40%" width="180%" height="190%">
+      <feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#3e6cff" flood-opacity=".32"/>
+    </filter>
+    <filter id="rwc-soft" x="-40%" y="-40%" width="180%" height="190%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0b1530" flood-opacity=".1"/>
+    </filter>
+    <filter id="rwc-glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#e5384d" flood-opacity=".45"/>
+    </filter>
+  </defs>
+  <style>
+    .rwc { --line: #cdd4e2; --surface: #ffffff; --edge: #e1e6ef; --glyph: #8a93a8; --ctx-bg: #edf2ff; --ctx-edge: #c7d5ff; --ctx-ink: #3659f0; --sto-bg: #ffffff; --sto-edge: #dde2ec; --sto-ink: #5b647c; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    @media (prefers-color-scheme: dark) {
+      .rwc { --line: #3a4359; --surface: #1b2131; --edge: #313a51; --glyph: #8f99b4; --ctx-bg: #1b2750; --ctx-edge: #34488f; --ctx-ink: #a3bbff; --sto-bg: #1b2131; --sto-edge: #313a51; --sto-ink: #aab3c9; }
+    }
+    .rwc .wire { fill: none; stroke: url(#rwc-flow); stroke-width: 2.5; stroke-linecap: round; opacity: .4; }
+    .rwc .spark { fill: none; stroke: url(#rwc-flow); stroke-width: 6; stroke-linecap: round; stroke-dasharray: .1 16; animation: rwc-flow 1.6s linear infinite; }
+    .rwc .dead { fill: none; stroke: var(--line); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 3 7; }
+    .rwc .tip { fill: none; stroke: var(--line); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .rwc .tile { fill: var(--surface); stroke: var(--edge); }
+    .rwc .g { fill: none; stroke: var(--glyph); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+    .rwc .pill-t { font-size: 13px; font-weight: 600; }
+    .rwc .ctx { fill: var(--ctx-bg); stroke: var(--ctx-edge); }
+    .rwc .ctx-t { fill: var(--ctx-ink); }
+    .rwc .sto { fill: var(--sto-bg); stroke: var(--sto-edge); }
+    .rwc .sto-t { fill: var(--sto-ink); }
+    @keyframes rwc-flow { to { stroke-dashoffset: -32; } }
+    @media (prefers-reduced-motion: reduce) { .rwc .spark { animation: none; } }
+  </style>
+
+  <g transform="translate(0 8)">
+    <!-- Real-world context flowing in… -->
+    <path class="wire" d="M108 44C136 44 136 120 164 120M108 196C136 196 136 120 164 120M164 120H238"/>
+    <path class="spark" d="M108 44C136 44 136 120 164 120H238"/>
+    <path class="spark" d="M108 196C136 196 136 120 164 120H238" style="animation-delay:-.8s"/>
+
+    <!-- …and cut off -->
+    <circle cx="260" cy="120" r="30" fill="#e5384d" opacity=".1"/>
+    <circle cx="260" cy="120" r="18" fill="url(#rwc-stop)" filter="url(#rwc-glow)"/>
+    <path d="M254 114l12 12M266 114l-12 12" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Where it should have gone -->
+    <path class="dead" d="M286 120H356M356 120C384 120 384 44 412 44M356 120H412M356 120C384 120 384 196 412 196"/>
+    <path class="tip" d="M406 39l6 5-6 5M406 115l6 5-6 5M406 191l6 5-6 5"/>
+
+    <!-- People -->
+    <g filter="url(#rwc-lift)"><rect x="40" y="12" width="64" height="64" rx="20" fill="url(#rwc-person)"/></g>
+    <rect x="40.5" y="12.5" width="63" height="63" rx="19.5" fill="url(#rwc-gloss)" stroke="#ffffff" stroke-opacity=".25"/>
+    <circle cx="72" cy="35" r="8" fill="#ffffff"/>
+    <path d="M56 63c0-11 7-17 16-17s16 6 16 17z" fill="#ffffff"/>
+
+    <!-- The world -->
+    <g filter="url(#rwc-lift)"><rect x="40" y="164" width="64" height="64" rx="20" fill="url(#rwc-globe)"/></g>
+    <rect x="40.5" y="164.5" width="63" height="63" rx="19.5" fill="url(#rwc-gloss)" stroke="#ffffff" stroke-opacity=".25"/>
+    <g transform="translate(72 196)">
+      <circle r="17" fill="#ffffff" fill-opacity=".16"/>
+      <g clip-path="url(#rwc-earth)" fill="#ffffff" stroke="#ffffff" stroke-width="1.1" stroke-linejoin="round">
+        <path d="M-14.5 -7L-11.5 -10L-7 -11.5L-3 -12L-1 -10.2L-1.2 -8.2L.6 -9.4L3 -11L5 -9.2L3.8 -7.2L2.6 -5.8L1.2 -4.2L1.4 -1.6L.4 -1.6L-.4 -3L-3 -2.8L-3.4 -1.2L-1.8 1.4L-.2 3.4L-1.2 3.6L-4.6 1L-7.2 -2L-9.4 -4L-11.8 -5.2Z"/>
+        <path d="M5.6 -14L9 -15L10.4 -13.2L8.2 -11L6.2 -11.6Z"/>
+        <path d="M-.4 4.6L2.2 4L5.2 5L8.2 6.6L8.4 8.2L6.4 10.2L4.6 12.2L2.6 15L1.6 16.6L1 15.8L1 13L0 10L-1.4 7.2Z"/>
+        <path d="M13.6 -8.4L18 -9L18 10L15.6 7L14.6 4.2L13 2.6L11.2 1L11 -1.2L11.8 -4L13.2 -5.6Z"/>
+      </g>
+      <circle r="17" fill="none" stroke="#ffffff" stroke-width="2.4"/>
+    </g>
+
+    <!-- Document -->
+    <g filter="url(#rwc-soft)"><rect class="tile" x="416.5" y="12.5" width="63" height="63" rx="19.5"/></g>
+    <path class="g" d="M436 33a3 3 0 0 1 3-3h13l8 8v17a3 3 0 0 1-3 3h-18a3 3 0 0 1-3-3z"/>
+    <path class="g" d="M452 30v5.5a2.5 2.5 0 0 0 2.5 2.5h5.5M441.5 44h13M441.5 50h8"/>
+
+    <!-- Database -->
+    <g filter="url(#rwc-soft)"><rect class="tile" x="416.5" y="88.5" width="63" height="63" rx="19.5"/></g>
+    <ellipse class="g" cx="448" cy="108" rx="13" ry="4.5"/>
+    <path class="g" d="M435 108v24a13 4.5 0 0 0 26 0v-24M435 120a13 4.5 0 0 0 26 0"/>
+
+    <!-- Spreadsheet -->
+    <g filter="url(#rwc-soft)"><rect class="tile" x="416.5" y="164.5" width="63" height="63" rx="19.5"/></g>
+    <rect class="g" x="434" y="183" width="28" height="26" rx="4"/>
+    <path class="g" d="M434 191.5h28M434 200h28M443.5 183v26M452.5 183v26"/>
+  </g>
+
+  <!-- Labels, centred under each column -->
+  <rect class="ctx" x="28.5" y="252.5" width="87" height="29" rx="14.5"/>
+  <text class="pill-t ctx-t" x="72" y="271.5" text-anchor="middle">Context</text>
+  <rect class="sto" x="404.5" y="252.5" width="87" height="29" rx="14.5"/>
+  <text class="pill-t sto-t" x="448" y="271.5" text-anchor="middle">Storage</text>
+</svg>

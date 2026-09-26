@@ -5,6 +5,7 @@
     "build": "next build"
   },
   "dependencies": {
+    "d3-delaunay": "^6.0.4",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",

@@ -36,7 +36,9 @@ export function Header({sections = []}) {
             id="nav-button" 
             type="button" 
             onClick={() => (setMenuOpen(open=>!open), document.body.classList.toggle("no-scroll"))}>
-              ☰
+              <svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true">
+    <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="3" strokeLinecap="round" fill="none" />
+  </svg>
           </button>
           <nav id="nav-menu" className={menuOpen ? "" : "hidden-narrow"}>
             {sections.map(id=>(
