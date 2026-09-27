@@ -59,7 +59,7 @@ export function NewsletterForm() {
 
 function F({n, t, r=false, ...atts}) {
   return (
-    <input name={n} type={t} autoComplete={n} placeholder={n} title={n} required={r} {...atts} />
+    <input name={n} type={t} autoComplete={n} placeholder={n+(!r?' (optional)':'')} title={n} required={r} {...atts} />
   )
 }
 
@@ -71,11 +71,11 @@ export function ContactForm() {
       endpoint="contact"
       successMessage="Thanks for reaching out! Someone will follow up as soon as possible."
     >
-      <F n="name" t="text" minLength={1} maxLength={100} pattern={String.raw`[^\x00-\x1F\x7F]+`}/>
+      <F n="name" t="text" r={true} minLength={1} maxLength={100} pattern={String.raw`[^\x00-\x1F\x7F]+`}/>
       <F n="email" t="email" r={true}/>
       <F n="affiliation" t="text" minLength={1} maxLength={100} pattern={String.raw`[^\x00-\x1F\x7F]+`}/>
 
-      <textarea name="message" required minLength={1} maxLength={1000} />
+      <textarea name="message" title="message" placeholder="message" required minLength={1} maxLength={1000} />
       <button type="submit">send</button>
     </SubmissionForm>
   );

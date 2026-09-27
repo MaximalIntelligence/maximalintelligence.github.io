@@ -34,6 +34,7 @@
     --color-main: #333;
     --color-secondary: #777;
     --background-main: #eee;
+    --bline: 1px solid #aaa;
 }
 
 * {
@@ -101,7 +102,7 @@ header a:hover {
     width: auto;
 
     @media (max-width: 900px) {
-        height: 4rem;
+        height: 2.5rem;
         margin-left: 1rem;
         display: revert;
     }
@@ -138,7 +139,7 @@ header a:hover {
     cursor: pointer;
     background: none;
     border: none;
-    font-size: 4rem;
+    font-size: 2.5rem;
     font-weight: 800;
     line-height: 1;
     padding: 1rem;
@@ -163,9 +164,9 @@ header a:hover {
         flex-direction: column;
         z-index: 1000;
         position: fixed;
-        top: calc(6rem);
+        top: 4.5rem;
         left: 0px;
-        height: calc(100dvh - 6rem);
+        height: calc(100dvh - 4.5rem);
         width: 100dvw;
         background: var(--background-main);
         padding: 4rem;
@@ -186,8 +187,9 @@ header a:hover {
 
 #phone-title {
     display: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: center;
+    margin: -1rem 0;
     @media (max-width: 900px) {
         display: revert;
     }
@@ -329,13 +331,17 @@ header a:hover {
     > :first-child {
         flex: 1 1 700px;
         min-width: 0;
+        border-top: var(--bline);
+        border-left: var(--bline);
 
         > h2 {
+            margin: 0 0 -1px -1px;
             padding: 2rem 2rem;
             font-size: 1rem;
             font-weight: 500;
             text-align: justify;
-            border: 1px solid #aaa;
+            border-right: var(--bline);
+            border-bottom: var(--bline);
         }
     }
 
@@ -408,12 +414,14 @@ header a:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-top: 3rem;
-    gap: -0.5px;
+    border-top: var(--bline);
+    border-left: var(--bline);
     > h4 {
         padding: 1rem 1rem;
         font-size: 1rem;
         font-weight: 500;
-        border: 1px solid #aaa;
+        border-right: var(--bline);
+        border-bottom: var(--bline);
     }
 
     @media (max-width: 900px) {
