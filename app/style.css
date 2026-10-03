@@ -208,7 +208,7 @@ main {
 }
 
 section {
-    margin: 0;
+    margin: 2rem 0;
     padding: 0 1rem;
     display: grid;
     grid-template-columns: minmax(200px, 1200px);
@@ -232,6 +232,7 @@ section {
     }
 
     @media (max-width:900px) {
+        padding: 3dvh 1rem;
         p {
             font-size: 1.5rem;
         }
@@ -242,7 +243,7 @@ section {
 #advantage-content {
     display: grid;
     grid-template-columns: 1fr 530px;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
 
     h1 {
@@ -262,10 +263,34 @@ section {
         h1 {
             text-align: left;
         }
+
+        svg {
+            max-width: 700px;
+        }
     }
 }
 
+#definitions-content {
+    margin: 8rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1000px;
+    border-top: solid 1px #333;
+    border-left: solid 1px #333;
+    p, h1 {
+        border-right: solid 1px #333;
+        border-bottom: solid 1px #333;
+        padding: 0.5rem 1rem;
+    }
 
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    @media (max-width: 1200px) {
+        margin: 3rem 0;
+        grid-template-columns: 1fr;
+    }
+}
 
 .row {
     display: flex;
