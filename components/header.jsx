@@ -22,6 +22,8 @@ export function Header({sections = []}) {
     document.body.classList.remove("no-scroll");
   }
 
+  const r = 8;
+
   return (
     <header>
       <div id="header-content">
@@ -36,9 +38,11 @@ export function Header({sections = []}) {
             id="nav-button" 
             type="button" 
             onClick={() => (setMenuOpen(open=>!open), document.body.classList.toggle("no-scroll"))}>
-              <svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true">
-    <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="3" strokeLinecap="round" fill="none" />
-  </svg>
+              <svg viewBox="0 0 30 25" width="1em" height="1em" aria-hidden="true">
+                <rect x="0" y="0" width="100%" height="5" rx={r} ry={r} fill="currentColor" />
+                <rect x="0" y="10" width="100%" height="5" rx={r} ry={r} fill="currentColor" />
+                <rect x="0" y="20" width="100%" height="5" rx={r} ry={r} fill="currentColor" />
+              </svg>
           </button>
           <nav id="nav-menu" className={menuOpen ? "" : "hidden-narrow"}>
             {sections.map(id=>(

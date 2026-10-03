@@ -1,42 +1,27 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns="http://www.w3.org/2000/svg" 
+  viewBox="-70 -70 240 227" fill="black">
+  <style>
+    svg {
+     --bg: #fff;
+     --fg: #333;
+    }
 
-<svg
-   width="160.85754mm"
-   height="148.06598mm"
-   viewBox="0 0 160.85754 148.06599"
-   version="1.1"
-   id="svg1"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs1" />
-  <path
-     style="fill:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-dashoffset:16.6299"
-     id="path900"
-     d="M 128.16748,148.06599 H 32.690059 A 32.690053,32.690053 0 0 1 4.3796427,99.030896 L 52.11836,16.345016 a 32.690053,32.690053 0 0 1 56.62082,10e-7 l 47.73872,82.685879 a 32.690053,32.690053 0 0 1 -28.31042,49.035094 z" />
-  <g
-     id="layer1"
-     transform="matrix(0.89126723,0,0,0.89126723,-1.5566974,-23.037992)">
-    <g
-       id="g6"
-       style="fill:#ffffff">
-      <path
-         id="path3"
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:8.97598;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-         d="m 142.25045,127.44262 c -13.80711,0 -24.9996,11.19308 -24.9996,25.00019 0,13.8071 11.19249,24.9996 24.9996,24.9996 13.8071,0 25.00018,-11.1925 25.00018,-24.9996 0,-13.80711 -11.19308,-25.00019 -25.00018,-25.00019 z" />
-      <path
-         id="path4"
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:8.97598;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-         d="m 91.987429,99.032585 c -13.807105,0 -25.000183,11.192495 -25.000183,24.999605 0,13.8071 11.193078,25.00018 25.000183,25.00018 13.807101,0 25.000181,-11.19308 25.000181,-25.00018 0,-13.80711 -11.19308,-24.999605 -25.000181,-24.999605 z" />
-      <path
-         id="path5"
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:8.97598;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-         d="m 41.724409,127.44262 c -13.807105,0 -25.000183,11.19308 -25.000183,25.00019 0,13.8071 11.193078,24.9996 25.000183,24.9996 13.807105,0 25.000183,-11.1925 25.000183,-24.9996 0,-13.80711 -11.193078,-25.00019 -25.000183,-25.00019 z" />
-      <path
-         id="path6"
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:8.97598;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-         d="m 91.987429,40.384374 c -13.807105,0 -25.000183,11.192499 -25.000183,24.999604 0,13.807105 11.193078,25.000183 25.000183,25.000183 13.807101,0 25.000181,-11.193078 25.000181,-25.000183 0,-13.807105 -11.19308,-24.999604 -25.000181,-24.999604 z" />
+    circle {
+     r: var(--r);
+    }
+    
+  </style>
+  <defs>
+    <g id="points">
+      <circle cx="0" cy="87"/>
+      <circle cx="50" cy="0"/>
+      <circle cx="100" cy="87"/>
     </g>
-  </g>
+  </defs>
+  <use href="#points" fill="var(--fg)" style="--r: 70px;"/>
+  <use href="#points" fill="var(--bg)" style="--r: 60px;"/>
+  <use href="#points" fill="var(--fg)" style="--r: 48px;"/>
+  <use href="#points" fill="var(--bg)" style="--r: 38px;"/>
+  <use href="#points" fill="var(--fg)" style="--r: 26px;"/>
+  <use href="#points" fill="var(--bg)" style="--r: 16px;"/>
 </svg>

@@ -1,0 +1,57 @@
+import { Header } from "../components/header";
+import { NewsletterForm, ContactForm } from "../components/forms";
+import {IQ} from "../components/IQ";
+
+
+export function Section({id, children}) { return <section id={id}><div id={`${id}-content`}>{children}</div></section> }
+
+<Header sections={"solutions products contact".split(" ")}/>
+<main>
+
+<section id="intro">
+
+# Build your data moat
+
+*measure, specialize, and leverage intelligence*
+
+</section>
+
+
+<Section id="advantage">
+# Get an <span style={{color:"#66b"}}>edge for your internal data + AI</span> <br/> over <span style={{color:"#de640d"}}>public AI</span>
+
+<IQ/>
+</Section>
+
+
+<section id="definitions">
+
+{/*ruler logo*/}
+
+measure
+
+# Is **AI + your data** better than the **AI on the internet** that anyone can use?
+
+{/*arrow up and right*/}
+
+specialize
+
+# What is the **next most optimal data point** that will improve your domain understanding?
+
+{/*lever or lightning?*/}
+
+leverage
+
+{/* # How much of your compute spend is used on your domain or are your workflows competing with hyperscalers? */}
+
+# Which of your projects have **more relative value when given extra compute** and AI spend? {/*And are you targeting those advantages with agentic harnesses? */}
+
+</section>
+
+
+
+
+
+
+</main>
+

@@ -1,13 +1,13 @@
 import "./style.css"
 
-import { Logo } from "../components/header";
+import { Logo, Header } from "../components/header";
 
 export const metadata = {
     title: {
       default: "Maximal Intelligence",
       template: "%s · Maximal Intelligence",
     },
-    description: "A description of my site.",
+    description: "Build your data moat.",
   };
 
 

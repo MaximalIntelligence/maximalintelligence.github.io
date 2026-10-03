@@ -38,10 +38,14 @@
 }
 
 * {
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
 }
+
+body, header, div, p, h1, h2, h3, h4 {
+    padding: 0;
+    margin: 0;
+}
+
 
 body {
     font-family: "Montserrat", sans-serif;
@@ -102,7 +106,6 @@ header a:hover {
     width: auto;
 
     @media (max-width: 900px) {
-        height: 2.5rem;
         margin-left: 1rem;
         display: revert;
     }
@@ -194,6 +197,75 @@ header a:hover {
         display: revert;
     }
 }
+
+
+
+
+
+
+main {
+    display: grid;
+}
+
+section {
+    margin: 0;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: minmax(200px, 1200px);
+    justify-content: center;
+}
+
+
+#intro {
+    color: #333;
+    padding: 15dvh 1rem;
+
+    h1 {
+        font-size: 3rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #333;
+    }
+
+    p {
+        font-size: 2rem;
+        padding-top: 1rem;
+    }
+
+    @media (max-width:900px) {
+        p {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+
+#advantage-content {
+    display: grid;
+    grid-template-columns: 1fr 530px;
+    gap: 2rem;
+    align-items: center;
+
+    h1 {
+        font-size: 1.8rem;
+        font-weight: 625;
+        text-align: right;
+    }
+
+    span {
+        font-weight: 800;
+    }
+
+    @media (max-width: 1200px) {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+
+        h1 {
+            text-align: left;
+        }
+    }
+}
+
+
 
 .row {
     display: flex;
