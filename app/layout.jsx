@@ -15,7 +15,7 @@ export const metadata = {
       title: "Maximal Intelligence",
       description: "Build your data moat.",
       url: "/",
-      images: [{ url: "/og.png", width: 1200, height: 627, alt: "Maximal Intelligence: Natural, Artificial, Maximal" }],
+      images: [{ url: "/og.png?v=2", width: 1200, height: 627, alt: "Maximal Intelligence: Natural, Artificial, Maximal" }],
     },
     twitter: {
       card: "summary_large_image",
