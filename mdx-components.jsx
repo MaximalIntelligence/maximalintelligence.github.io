@@ -1,4 +1,5 @@
 import { Header } from './components/header';
+import { DataTable } from './components/data-table';
 
 
 function Row({ id, children }) {
@@ -11,7 +12,7 @@ function Row({ id, children }) {
     );
   }
  
-const components = {Row, Header}
+const components = {Row, Header, DataTable}
  
 export function useMDXComponents() {
   return components

@@ -947,3 +947,73 @@ h2 {
 .bar h2 {
     margin-top: 1rem;
 } */
+
+/* DataTable (components/data-table.jsx) */
+.data-table {
+    margin: 1rem;
+    overflow-x: auto;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        line-height: 1.4;
+    }
+
+    th, td {
+        padding: 0.6rem 0.8rem;
+        text-align: left;
+        vertical-align: top;
+        border-bottom: var(--bline);
+    }
+
+    th {
+        font-weight: 600;
+        border-bottom: 2px solid var(--color-main);
+    }
+
+    /* tbody tr:nth-child(even) {
+        background: #f4f4f4;
+    } */
+
+    ul {
+        margin: 0;
+        padding-left: 1.1rem;
+    }
+
+    li + li {
+        margin-top: 0.2rem;
+    }
+
+    /* Stack each row into a labeled card on narrow screens */
+    @media (max-width: 600px) {
+        thead {
+            display: none;
+        }
+
+        tr, td {
+            display: block;
+        }
+
+        tr {
+            padding: 0.4rem 0;
+            border-bottom: 2px solid var(--color-main);
+        }
+
+        td {
+            border-bottom: none;
+            padding: 0.3rem 0.8rem;
+        }
+
+        td::before {
+            content: attr(data-label);
+            display: block;
+            font-size: 0.8em;
+            font-weight: 600;
+            color: var(--color-secondary);
+        }
+
+        td:empty {
+            display: none;
+        }
+    }
+}
