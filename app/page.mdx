@@ -1,52 +1,129 @@
 import { Header } from "../components/header";
 import { NewsletterForm, ContactForm } from "../components/forms";
 import {IQ} from "../components/IQ";
+import {Bipartite} from "../components/Bipartite";
+import {Iterate} from "../components/Iterate";
 
 
 export function Section({id, children}) { return <section id={id}><div id={`${id}-content`}>{children}</div></section> }
 
-<Header sections={"solutions products contact".split(" ")}/>
+<Header sections={"curate measure leverage contact".split(" ")}/>
 <main>
 
-<section id="intro">
+<Section id="intro">
 
 # Build your data moat
 
-*measure, specialize, and leverage intelligence*
+*curate, measure, and leverage*
 
-</section>
+</Section>
 
+<Section id="curate">
 
-<Section id="advantage">
-# Get an <span style={{color:"#66b"}}>edge for your internal data + AI</span> <br/> over <span style={{color:"#de640d"}}>public AI</span>
+#### curate
+<div>
+<Bipartite/>
 
-<IQ/>
+<div>
+# Does your data explain itself?
+
+Maximal intelligence ontology tools turn your original data into a knowledge graph that makes your analysis fast and trustworthy.
+</div>
+</div>
 </Section>
 
 
-<Section id="definitions">
+<Section id="curate-cards">
 
 {/*ruler logo*/}
 
-*measure*
+<div className="card">
 
-# Is **AI + your data** better than the **AI on the internet** that anyone can use?
+<div className="card-header"><img src="/kg.svg"/> *schemas and standards*</div>
+
+Standardized schemas that are flexible and adjust to updates. 
+
+Nothing breaks, more context gets captured.
+
+</div>
+
+{/*ruler logo or protractor*/}
+<div className="card">
+<div className="card-header"><img src="/query.svg"/> *integration*</div>
+
+Federated queries across the organization reduce data access friction and eliminate redundant work.
+</div>
 
 {/*arrow up and right*/}
+<div className="card">
+<div className="card-header"><img src="/trend.svg"/> *automatic modeling*</div>
 
-*specialize*
+Maximal intelligence knowledge graphs contain the context to organize and predict.
 
-# What is the **next most optimal data point** that will improve your domain understanding?
+Curation now has measurable quality metrics.
+</div>
 
 {/*lever or lightning?*/}
 
-*leverage*
+{/* *leverage* */}
 
 {/* # How much of your compute spend is used on your domain or are your workflows competing with hyperscalers? */}
 
-# Which of your projects have **more relative value when given extra compute** and AI spend? {/*And are you targeting those advantages with agentic harnesses? */}
+{/*# Which of your projects have **more relative value when given extra compute** and AI spend? And are you targeting those advantages with agentic harnesses? */}
 
 </Section>
+
+
+<Section id="measure">
+<div id="measure-main">
+<div>
+#### How much of your data is being used in your connected AI workflows?
+
+# <u>Measure</u> the advantage <span style={{color:"#8dff80"}}>internal data + AI</span> <br/> has over <span style={{color:"#bacded"}}>public AI</span>
+</div>
+
+<IQ/>
+</div>
+
+<div id="measure-cards">
+<div>
+#### Internal metrics
+
+Calculate schema coverage, retrieval statistics, and modeling accuracy for your workflows.
+</div>
+<div>
+#### Moat scoring
+
+Compare how much of your internal data makes it into your workflows and its effect on model accuracy compared to the maximal intelligence internet data search.
+</div>
+</div>
+</Section>
+
+
+<Section id="leverage">
+<div>
+#### leverage
+
+1. Identify the optimal **next data point** that you need to improve your moat
+2. **Route your compute spend** to projects with high relative value
+2. **Iterate**
+</div>
+<Iterate />
+</Section>
+
+<Section id="contact">
+## Ready to go maximal or want to learn more?
+<ContactForm/>
+</Section>
+
+
+
+{/* <Section id="solutions">
+# Get our ontological tools to curate your data and compare to our deep public knowledge graph to measure the benefits of your data for decision making.
+
+<img src="/GUI-laptop.svg"/>
+
+</Section> */}
 
 
 

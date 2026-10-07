@@ -22,7 +22,9 @@
       <use href="#points" fill="white" style="--r: 30px;"/>
     </mask>
   </defs>
-    <use href="#points" fill="var(--fg)" style="--r: 60px;"/>
-    <use href="#points" fill="var(--bg)" style="--r: 38px;"/>
-    <use href="#points" fill="var(--fg)" style="--r: 19px;"/>
+    <use href="#points" fill="var(--bg)" style="--r: 60px;"/>
+    <use href="#points" fill="var(--fg)" style="--r: 51px;"/>
+    <circle cx="50" cy="58" fill="var(--fg)" style="r: 20px;"/>
+    <use href="#points" fill="var(--bg)" style="--r: 30px;"/>
+    <use href="#points" fill="var(--fg)" style="--r: 15px;"/>
 </svg>

@@ -208,7 +208,7 @@ main {
 }
 
 section {
-    margin: 2rem 0;
+    margin: 1rem 0;
     padding: 0 1rem;
     display: grid;
     grid-template-columns: minmax(200px, 1200px);
@@ -217,13 +217,17 @@ section {
 
 
 #intro {
+    border-bottom: 1 solid #ccc;
+}
+
+#intro-content {
     color: #333;
     padding: 15dvh 1rem;
 
     h1 {
         font-size: 3rem;
         padding-bottom: 1rem;
-        border-bottom: 1px solid #333;
+        border-bottom: 0.2rem solid #333;
     }
 
     p {
@@ -239,58 +243,221 @@ section {
     }
 }
 
+#curate-content {
+    h4 {
+        opacity: 0.5;
+    }
+    > div {
+        display: flex;
+        align-items: center;
 
-#advantage-content {
+        > div {
+            flex: 1;
+            display: grid;
+            gap: 1rem;
+            padding: 2rem;
+        }
+    }
+
+    svg {
+        flex: 0 1 400px;
+    }
+
+    @media (max-width:1200px) {
+        > div {
+            flex-direction: column-reverse;
+            justify-items: center;
+        }
+    }
+}
+
+#curate-cards-content {
+    margin: 2rem 0;
     display: grid;
-    grid-template-columns: 1fr 530px;
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, 300px);
+    gap: 2rem;
+    justify-content: center;
+
+    .card {
+        border: solid 1px #333;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        padding: 1rem;
+
+        .card-header {
+            display: grid;
+            padding: 0 0 0.75rem 0;
+            grid-auto-flow: column;
+            grid-auto-columns: max-content;
+            align-items: center;
+
+            font-weight: 600;
+
+            img {
+                margin-right: 1rem;
+                height: 1.6rem;
+                width: auto;
+            }
+        }
+    }
+
+    p, h1 {
+        padding: 0.25rem 0rem;
+    }
+
+    h1 {
+        font-size: 1.25rem;
+        font-weight: 400;
+    }
+}
+
+#measure {
+    padding-top: 3rem;
+    background: linear-gradient(315deg, #448 50%,rgba(68, 68, 136, 0.959));
+
+    @media (max-width: 1200px) {
+        padding-top: 0;
+    }
+}
+
+#measure-content {
+    color: #ccc;
+
+    #measure-main {
+        display: grid;
+        grid-template-columns: 1fr 530px;
+        gap: 1rem;
+        align-items: center;
+
+        > div {
+            display: grid;
+            margin: 2.5rem 0;
+            gap: 1rem;
+        }
+
+        h4 {
+            text-align: right;
+        }
+    
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 625;
+            text-align: right;
+        }
+
+        span {
+            font-weight: 800;
+        }
+
+        @media (max-width: 1200px) {
+            grid-template-columns: 1fr;
+            justify-items: center;
+    
+            div {
+                gap: 2rem;
+            }
+    
+            h1,h4 {
+                text-align: left;
+            }
+    
+            h1 {
+                font-size: 1.4rem;
+            }
+    
+            svg {
+                max-width: 700px;
+            }
+        }
+    }
+
+
+    #measure-cards {
+        display: flex;
+        justify-content:center;
+        flex-wrap: wrap;
+        margin: 2.5rem 0 4rem 0;
+        * {
+            flex: 0 1 500px;
+        }
+        h4 {
+            padding-bottom: 0.5rem;
+        }
+        div:first-child {
+            margin-bottom: 2rem;
+            padding-right: 50px;
+        }
+        div:nth-child(2) {
+            padding-left: 50px;
+            border-left: 1 solid #ccc;
+        }
+
+        @media (max-width: 1100px) {
+            div:first-child {
+                padding-right: 0;
+                border: revert;
+            }
+            div:nth-child(2) {
+                padding-left: 0;
+                border: revert;
+            }
+        }
+    }
+}
+
+#leverage {
+    border-bottom: 1px solid #ccc;
+}
+#leverage-content {
+    margin: 2rem;
+    display: grid;
+    justify-content: center;
+    gap: 2.5rem;
+
+    svg {
+        max-width: 600px;
+    }
+}
+
+#contact-content {
+    display: grid;
+    gap: 2rem;
+    margin: 2.5rem 1rem;
+    grid-template-columns: minmax(0,700px);
+    justify-content: center;
+}
+
+#description-content {
+    padding-bottom:15dvh; 
+    display: grid;
+    grid-template-columns: 1fr 500px;
+    gap: 2rem;
     align-items: center;
 
     h1 {
-        font-size: 1.8rem;
-        font-weight: 625;
-        text-align: right;
+        font-weight: 300;
     }
 
-    span {
-        font-weight: 800;
+    img {
+        max-width: 500px;
+        height: auto;
     }
 
     @media (max-width: 1200px) {
+        padding: 0dvh 1rem 15dvh 1rem;
         grid-template-columns: 1fr;
         gap: 4rem;
+        justify-items: center;
 
         h1 {
-            text-align: left;
+            font-size: 1.25rem;
         }
-
-        svg {
+        img {
             max-width: 700px;
         }
     }
 }
 
-#definitions-content {
-    margin: 8rem 0;
-    display: grid;
-    grid-template-columns: 1fr 1000px;
-    border-top: solid 1px #333;
-    border-left: solid 1px #333;
-    p, h1 {
-        border-right: solid 1px #333;
-        border-bottom: solid 1px #333;
-        padding: 0.5rem 1rem;
-    }
-
-    h1 {
-        font-size: 1.4rem;
-    }
-
-    @media (max-width: 1200px) {
-        margin: 3rem 0;
-        grid-template-columns: 1fr;
-    }
-}
 
 .row {
     display: flex;
@@ -640,13 +807,42 @@ section {
 
 footer {
     background: #333;
+    display: flex;
 }
 
-#footer-left {
-    background: #ddd;
-    margin: 1rem 1rem;
-    @media (max-width: 900px) {
-        display: none;
+#footer-content {
+    flex: 1;
+    display: flex;
+    justify-content:space-between;
+    
+    * {
+        flex: 0 1 auto;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    #footer-left {
+        background: #ddd;
+        margin: 1rem 1rem;
+        @media (max-width: 900px) {
+            display: none;
+        }
+    }
+
+    #footer-right {
+        display: grid;
+        align-content: center;
+        margin: 1rem;
+        color: #ccc;
+
+        span {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
     }
 }
 

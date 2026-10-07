@@ -87,8 +87,8 @@ keySplines.push("0 0 1 1");
 export function IQ() {
     return (
         <svg viewBox={`-23 -15 48 30`}>
-            <path d={d_public} fill="none" stroke="#de640d" strokeWidth="0.5"/>
-            <path d={d_base} fill="none" stroke="#66b" strokeWidth="0.5">
+            <path d={d_public} fill="none" stroke="#bacded" strokeWidth="0.5"/>
+            <path d={d_base} fill="none" stroke="#8dff80" strokeWidth="0.5">
                 <animate 
                     attributeName="d"
                     dur={`${dur}s`}
@@ -107,8 +107,8 @@ export function IQ() {
                         y={di.y}
                         textAnchor={di.anchor}
                         dominantBaseline={di.baseline}
-                        fontSize={2.5}
-                        fontWeight={700}
+                        fontSize={1.5}
+                        fontWeight={400}
                         fill="currentColor"
                         opacity={1}
                     >
@@ -124,8 +124,11 @@ export function IQ() {
                 )
             })}
 
-            <text x={0} y={0} textAnchor="middle" dominantBaseline="middle" fontSize={6} fontWeight={400} fill="currentColor">
-            IQ
+            <text x={0} y={-1.5} textAnchor="middle" dominantBaseline="middle" fontSize={2} fontWeight={400} fill="currentColor">
+            Context
+            </text>
+            <text x={0} y={1} textAnchor="middle" dominantBaseline="middle" fontSize={2} fontWeight={400} fill="currentColor">
+            Specialization
             </text>
         </svg>
     );

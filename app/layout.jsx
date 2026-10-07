@@ -21,6 +21,11 @@ export default function RootLayout({ children }) {
               <div id="footer-left">
                 <Logo />
               </div>
+              <div id="footer-right">
+                <span><a href="/privacy">Privacy Policy</a></span>
+
+                Copyright © 2026 all rights reserved. Maximal Intelligence Corporation.
+              </div>
             </div>
           </footer>
         </body>
