@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-70 -70 240 227">
+  <!-- The favicon: logo.svg, light on dark browser chrome (page CSS does not reach the tab). -->
+  <style>@media (prefers-color-scheme: dark) { rect { fill: #ccc; } }</style>
+  <defs>
+    <mask id="m" x="-70" y="-70" width="240" height="227" maskUnits="userSpaceOnUse">
+      <g fill="white">
+        <circle cx="0" cy="87" r="70"/>
+        <circle cx="50" cy="0" r="70"/>
+        <circle cx="100" cy="87" r="70"/>
+      </g>
+      <g fill="black">
+        <circle cx="0" cy="87" r="60"/>
+        <circle cx="50" cy="0" r="60"/>
+        <circle cx="100" cy="87" r="60"/>
+      </g>
+      <g fill="white">
+        <circle cx="0" cy="87" r="48"/>
+        <circle cx="50" cy="0" r="48"/>
+        <circle cx="100" cy="87" r="48"/>
+      </g>
+      <g fill="black">
+        <circle cx="0" cy="87" r="38"/>
+        <circle cx="50" cy="0" r="38"/>
+        <circle cx="100" cy="87" r="38"/>
+      </g>
+      <g fill="white">
+        <circle cx="0" cy="87" r="26"/>
+        <circle cx="50" cy="0" r="26"/>
+        <circle cx="100" cy="87" r="26"/>
+      </g>
+      <g fill="black">
+        <circle cx="0" cy="87" r="16"/>
+        <circle cx="50" cy="0" r="16"/>
+        <circle cx="100" cy="87" r="16"/>
+      </g>
+    </mask>
+  </defs>
+  <rect x="-70" y="-70" width="240" height="227" fill="#333" mask="url(#m)"/>
+</svg>
