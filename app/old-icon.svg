@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+  viewBox="-60 -60 220 207" fill="black">
+  <style>
+    svg {
+      --fg: #eee;
+      --bg: #333;
+    }
+    #points circle {
+     r: var(--r);
+    }
+    
+  </style>
+  <defs>
+    <g id="points">
+      <circle cx="0" cy="87"/>
+      <circle cx="50" cy="0"/>
+      <circle cx="100" cy="87"/>
+    </g>
+    <mask id="m" x="-60" y="-60" width="220" height="207">
+      <circle cx="50" cy="58" fill="black" r="40px"/>
+      <use href="#points" fill="black" style="--r: 60px;"/>
+      <use href="#points" fill="white" style="--r: 30px;"/>
+    </mask>
+  </defs>
+    <use href="#points" fill="var(--bg)" style="--r: 60px;"/>
+    <use href="#points" fill="var(--fg)" style="--r: 51px;"/>
+    <circle cx="50" cy="58" fill="var(--fg)" style="r: 20px;"/>
+    <use href="#points" fill="var(--bg)" style="--r: 30px;"/>
+    <use href="#points" fill="var(--fg)" style="--r: 15px;"/>
+</svg>
